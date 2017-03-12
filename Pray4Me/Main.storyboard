@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fKY-hV-Kh7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Categories-->
+        <scene sceneID="dmh-yr-Twh">
+            <objects>
+                <viewController title="Categories" id="qyL-75-glk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="osE-gv-dnJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Odt-uy-4ik"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vhO-Kb-M5O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Categories" image="categories" selectedImage="categories" id="yAV-qv-bTb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e92-pi-da1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1050" y="969"/>
+        </scene>
+        <!--Calender-->
+        <scene sceneID="89W-6o-SfT">
+            <objects>
+                <viewController title="Calender" id="ySN-k2-Wsj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f3E-1Y-Uhp"/>
+                        <viewControllerLayoutGuide type="bottom" id="g2n-sH-1Gb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zPX-Hv-jK4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="4mY-aq-zsw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbW-ow-eoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-117" y="291"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="026-eI-VUh">
+            <objects>
+                <viewController title="Settings" id="102-HH-rJY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d7p-9g-09D"/>
+                        <viewControllerLayoutGuide type="bottom" id="rsI-Lj-wih"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XSv-oA-90x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="6V3-90-n9h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pjy-aH-7xB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1134" y="-862"/>
+        </scene>
+        <!--Prayer Feed-->
+        <scene sceneID="SJB-a3-atr">
+            <objects>
+                <tableViewController title="Prayer Feed" id="hGF-Kn-Ijw" customClass="PrayerFeedTableViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d4T-A6-AdA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PrayerRequestCell" id="mQn-dC-tbW" customClass="PrayerRequestCell" customModule="Pray4Me" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mQn-dC-tbW" id="82P-Lw-jWU">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SIx-JW-NFo">
+                                            <rect key="frame" x="8" y="2" width="39" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otU-wO-mI0">
+                                            <rect key="frame" x="55" y="0.0" width="158" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEE-Md-IiH">
+                                            <rect key="frame" x="55" y="20" width="287" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="requestLabel" destination="aEE-Md-IiH" id="hu4-Z7-1tq"/>
+                                    <outlet property="userAvatar" destination="SIx-JW-NFo" id="HmS-RS-Z4G"/>
+                                    <outlet property="userNameLabel" destination="otU-wO-mI0" id="r2N-Xv-ccg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hGF-Kn-Ijw" id="JmJ-SO-70v"/>
+                            <outlet property="delegate" destination="hGF-Kn-Ijw" id="hcx-w4-6n4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="We all need prayer!" id="pgl-R2-Hjf">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KPr-6F-bWw">
+                            <connections>
+                                <segue destination="UCh-Si-pio" kind="presentation" identifier="RequestDetailsSegue" id="ehh-yc-Bs7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3JU-Az-4F8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1910.5" y="-496.5"/>
+        </scene>
+        <!--Ask for Prayer-->
+        <scene sceneID="2ES-aM-HBQ">
+            <objects>
+                <tableViewController title="Ask for Prayer" id="MPw-1q-INr" customClass="RequestDetailsTableViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="gqZ-9L-Ve6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="What do you need prayer for?" id="dEt-m4-VfB">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="264" id="xdJ-g5-2hd">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="264"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xdJ-g5-2hd" id="HrA-Ia-1zu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="263"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" keyboardDismissMode="interactive" text="I need prayer for..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="usV-Yd-25M">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="263"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="How do you feel?" id="LIv-4u-rc0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="liq-ix-gAh" detailTextLabel="GDO-7A-PnE" style="IBUITableViewCellStyleValue1" id="Bli-2F-vJA">
+                                        <rect key="frame" x="0.0" y="377" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bli-2F-vJA" id="f5f-9I-Wfd">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I feel..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="liq-ix-gAh">
+                                                    <rect key="frame" x="15" y="11" width="51" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Select Feeling" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GDO-7A-PnE">
+                                                    <rect key="frame" x="232" y="11" width="108" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8dD-Z8-KAS" kind="show" identifier="PickFeeling" id="C6m-XT-7N4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ask for Prayer" id="qG4-Hh-WU5">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="EZw-BN-IQ6">
+                            <connections>
+                                <action selector="cancel:" destination="MPw-1q-INr" id="yok-g3-fov"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="RRB-Rs-F0r">
+                            <connections>
+                                <action selector="done:" destination="MPw-1q-INr" id="hNh-yL-se2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="prayerTextView" destination="usV-Yd-25M" id="T9b-bo-eJm"/>
+                        <outlet property="userFeelingLabel" destination="GDO-7A-PnE" id="3cP-9a-xcU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oi2-lU-dF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3943.1999999999998" y="-493.40329835082463"/>
+        </scene>
+        <!--Prayer Feeling Picker Controller-->
+        <scene sceneID="xwM-zf-qyi">
+            <objects>
+                <tableViewController id="8dD-Z8-KAS" customClass="PrayerFeelingPickerController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="DgJ-bI-SBM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeelingCell" id="xs7-V2-ePK">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xs7-V2-ePK" id="PzE-8a-YSd">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="8dD-Z8-KAS" id="ddS-Tw-bLB"/>
+                            <outlet property="delegate" destination="8dD-Z8-KAS" id="QeE-QR-mgi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TQ2-kG-JVz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5025" y="-493"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gk4-lt-b2T">
+            <objects>
+                <navigationController id="UCh-Si-pio" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4UO-Zn-hKT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="MPw-1q-INr" kind="relationship" relationship="rootViewController" id="fAe-Ne-TWg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F1g-YV-232" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2995" y="-493"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="pe9-JO-QMz">
+            <objects>
+                <navigationController id="hOf-gJ-xGl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="newsfeed" selectedImage="newsfeed" id="FYp-jk-9wK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qOu-S4-CbF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hGF-Kn-Ijw" kind="relationship" relationship="rootViewController" id="kfo-qb-lJ2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xd4-kE-6QX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="963" y="-496"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="m9L-HG-6gN">
+            <objects>
+                <tabBarController id="fKY-hV-Kh7" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9Eg-Va-BnE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="hOf-gJ-xGl" kind="relationship" relationship="viewControllers" id="YYv-wg-HMh"/>
+                        <segue destination="ySN-k2-Wsj" kind="relationship" relationship="viewControllers" id="n5k-fk-wXF"/>
+                        <segue destination="qyL-75-glk" kind="relationship" relationship="viewControllers" id="WGH-y4-oqM"/>
+                        <segue destination="102-HH-rJY" kind="relationship" relationship="viewControllers" id="SSk-6Q-vKS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AMK-rt-Mlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1070" y="-37"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calender" width="30" height="30"/>
+        <image name="categories" width="30" height="30"/>
+        <image name="newsfeed" width="30" height="30"/>
+        <image name="settings" width="30" height="30"/>
+    </resources>
+</document>

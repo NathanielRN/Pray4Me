@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  Pray4Me
 //
 //  Created by Nathaniel Ruiz on 2017-02-25.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class PrayerCalender: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
