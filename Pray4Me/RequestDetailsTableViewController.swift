@@ -16,18 +16,18 @@ protocol RequestDetailsDelegate: class {
 
 class RequestDetailsTableViewController: UITableViewController, FeelingPickerTableViewControllerDelegate {
 	
-	weak var delegate: RequestDetailsDelegate?
+	weak var delegateForSaveAndCancel: RequestDetailsDelegate?
 	var feeling: String = "Thinking"
 	
 	@IBAction func cancel(_ sender: Any) {
-		self.delegate?.requestDetailsDidCancel(self)
+		self.delegateForSaveAndCancel?.requestDetailsDidCancel(self)
 	}
 
 	@IBAction func done(_ sender: Any) {
 		let prayer = PrayerRequest()
 		prayer.requestString = self.prayerTextView.text
 		prayer.userName = feeling
-		self.delegate?.requestDetailsDidSubmit(self, didAddPrayer: prayer)
+		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, didAddPrayer: prayer)
 	}
 
 	
@@ -52,12 +52,7 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 		self.view.addGestureRecognizer(tapAwayFromTextView)
 		tapAwayFromTextView.cancelsTouchesInView = false
 		
-//		self.userFeelingLabel.text = self.feeling
-//		
-//		let scrollDrownOnTextView = UISwipeGestureRecognizer(target: self.prayerTextView, action: #selector(self.dismissKeyboard))
-//		scrollDrownOnTextView.direction = .down
-//		self.view.addGestureRecognizer(scrollDrownOnTextView)
-//		scrollDrownOnTextView.cancelsTouchesInView = false
+		//Making the TableViewController have an interactively enable keyboard gives it the swipedown capability
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
