@@ -8,4 +8,8 @@
 
 import Foundation
 
-var prayerRequests = [PrayerRequest]()
+class RequestsForPrayer {
+
+	var prayerRequests = [PrayerRequest]()
+
+}

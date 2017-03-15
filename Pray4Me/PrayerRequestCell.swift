@@ -13,9 +13,9 @@ class PrayerRequestCell: UITableViewCell {
 	@IBOutlet weak var userNameLabel: UILabel!
 	@IBOutlet weak var requestLabel: UILabel!
 	@IBOutlet weak var userAvatar: UIImageView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

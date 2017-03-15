@@ -9,13 +9,13 @@
 import UIKit
 
 class PrayerRequest: NSObject {
-	
+
 	var userName: String?
-	
+
 	var requestString: String?
-	
+
 	var userAvatar: UIImage?
-	
+
 	var reputation: Int?
 
 }

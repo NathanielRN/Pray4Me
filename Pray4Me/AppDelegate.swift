@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let tabBarController: UITabBarController? = (self.window?.rootViewController as? UITabBarController)
 		let navigationController: UINavigationController? = tabBarController?.viewControllers?[0] as! UINavigationController?
 		let prayerFeedTableViewController: PrayerFeedTableViewController? = navigationController?.viewControllers[0] as! PrayerFeedTableViewController?
-		prayerFeedTableViewController?.prayerRequests = prayerRequests
+		prayerFeedTableViewController?.prayerRequestsSource.prayerRequests = prayerRequests
 		return true
 	}
 
