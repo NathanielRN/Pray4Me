@@ -25,6 +25,8 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		tableView.rowHeight = UITableViewAutomaticDimension
+		tableView.estimatedRowHeight = 60
     }
 
     override func didReceiveMemoryWarning() {

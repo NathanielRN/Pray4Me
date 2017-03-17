@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		165D1D181E62797E0083322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D171E62797E0083322E /* AppDelegate.swift */; };
 		165D1D1C1E62797E0083322E /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D1B1E62797E0083322E /* CalenderViewController.swift */; };
-		165D1D211E62797E0083322E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D201E62797E0083322E /* Assets.xcassets */; };
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
 		165D1D3A1E62797E0083322E /* Pray4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D391E62797E0083322E /* Pray4MeUITests.swift */; };
@@ -24,6 +23,7 @@
 		16FE878E1E74EA6600281EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FE878D1E74EA6600281EBF /* Main.storyboard */; };
 		16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */; };
 		16FE88101E78D0D000281EBF /* PrayerFeelingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */; };
+		16FE883C1E7B7F6500281EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FE883B1E7B7F6500281EBF /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		165D1D141E62797E0083322E /* Pray4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pray4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D171E62797E0083322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165D1D1B1E62797E0083322E /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
-		165D1D201E62797E0083322E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		165D1D231E62797E0083322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		165D1D251E62797E0083322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		165D1D2A1E62797E0083322E /* Pray4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pray4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +66,7 @@
 		16FE878D1E74EA6600281EBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeedSource.swift; sourceTree = "<group>"; };
 		16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeelingSource.swift; sourceTree = "<group>"; };
+		16FE883B1E7B7F6500281EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +124,7 @@
 				165D1D491E627CE10083322E /* SettingsViewController.swift */,
 				16BB056E1E6D16DA00429A12 /* Prayer Feed */,
 				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
-				165D1D201E62797E0083322E /* Assets.xcassets */,
+				16FE883B1E7B7F6500281EBF /* Assets.xcassets */,
 				165D1D221E62797E0083322E /* LaunchScreen.storyboard */,
 				165D1D251E62797E0083322E /* Info.plist */,
 			);
@@ -274,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */,
-				165D1D211E62797E0083322E /* Assets.xcassets in Resources */,
+				16FE883C1E7B7F6500281EBF /* Assets.xcassets in Resources */,
 				16FE878E1E74EA6600281EBF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
