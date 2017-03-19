@@ -25,14 +25,14 @@ let dateSelectedIndex = 2
 
 
 @objc protocol PrayerCalendarViewDataSource: class {
-	func startDate() -> NSDate?
-	func endDate() -> NSDate?
+	func startDate() -> Date?
+	func endDate() -> Date?
 }
 
 @objc protocol PrayerCalendarViewDelegate: class {
 	@objc optional func calendar(_ calendar : PrayerCalendarView, canSelectDate date : Date) -> Bool
 	func calendar(_ calendar : PrayerCalendarView, didScrollToMonth date : Date)
-	func calendar(_ calendar: PrayerCalendarView, didSelectDate date: NSDate, withEvents events: [CalendarEvent]) -> Void
+	func calendar(_ calendar: PrayerCalendarView, didSelectDate date: Date, withEvents events: [CalendarEvent]) -> Void
 	@objc optional func calendar(_ calendar : PrayerCalendarView, didDeselectDate date : Date)
 }
 
@@ -185,15 +185,15 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 	
 	//Mark: UICollectionViewDataSource
 	
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection: Int) -> Int {
+	func numberOfSections(in collectionView: UICollectionView) -> Int {
 
 		guard let startDate = self.collectionDataSource?.startDate(), let endDate = self.collectionDataSource?.endDate() else {
 			return 0
 		}
 	
 	
-		self.startDateCache = startDate
-		self.endDateCache = endDate
+		self.startDateCache = startDate as NSDate
+		self.endDateCache = endDate as NSDate
 		
 		if (self.gregorian as NSCalendar).compare(startDate as Date, to: endDate as Date, toUnitGranularity: .nanosecond) != ComparisonResult.orderedAscending {
 			return 0
@@ -223,6 +223,30 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 	}
 	
 	var monthInfo: [Int:[Int]] = [Int:[Int]]()
+	
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		
+		var monthOffsetComponents = DateComponents()
+		
+		// offset by the number of months
+		monthOffsetComponents.month = section;
+		
+		guard let correctMonthForSectionDate = (self.gregorian as NSCalendar).date(byAdding: monthOffsetComponents, to: startOfMonthCache as Date, options: NSCalendar.Options()) else {
+			return 0
+		}
+		
+		let numberOfDaysInMonth = (self.gregorian as NSCalendar).range(of: .day, in: .month, for: correctMonthForSectionDate).length
+		
+		var firstWeekdayOfMonthIndex = (self.gregorian as NSCalendar).component(NSCalendar.Unit.weekday, from: correctMonthForSectionDate)
+		firstWeekdayOfMonthIndex = firstWeekdayOfMonthIndex - 1 // firstWeekdayOfMonthIndex should be 0-Indexed
+		firstWeekdayOfMonthIndex = (firstWeekdayOfMonthIndex + 6) % 7 // push it modularly so that we take it back one day so that the first day is Monday instead of Sunday which is the default
+		
+		monthInfo[section] = [firstWeekdayOfMonthIndex, numberOfDaysInMonth]
+		
+		return numberOfDaysInWeek * maximumNumberOfRows // 7 x 6 = 42
+		
+		
+	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		
@@ -339,6 +363,17 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 		return false // if date is out of scope
 	}
 	
+	func selectDate(_ date: Date) {
+		
+		guard let indexPath = self.indexPathForDate(date) else { return }
+		
+		guard self.calendarView.indexPathsForSelectedItems?.contains(indexPath) == false else { return }
+		
+		self.calendarView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition())
+		
+		selectedIndexPaths.append(indexPath)
+		selectedDates.append(date as NSDate)
+	}
 	func deselectDate(_ date: Date) {
 
 		guard let indexPath = self.indexPathForDate(date) else { return }
@@ -378,7 +413,7 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 			eventsArray = eventsForDay
 		}
 		
-		prayerDelegate?.calendar(self, didSelectDate: dateBeingSelectedByUser as NSDate, withEvents: eventsArray)
+		prayerDelegate?.calendar(self, didSelectDate: dateBeingSelectedByUser as Date, withEvents: eventsArray)
 		
 		selectedIndexPaths.append(indexPath)
 		selectedDates.append(dateBeingSelectedByUser as NSDate)

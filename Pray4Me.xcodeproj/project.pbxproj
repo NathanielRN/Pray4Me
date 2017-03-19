@@ -29,6 +29,9 @@
 		16FE88551E7DE2FB00281EBF /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88541E7DE2FB00281EBF /* CalendarEvent.swift */; };
 		16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88571E7E47AC00281EBF /* CalendarHeaderView.swift */; };
 		16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88591E7E4BD100281EBF /* CalendarDayCell.swift */; };
+		16FE885E1E7E5E4D00281EBF /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE885D1E7E5E4D00281EBF /* CalendarViewController.swift */; };
+		16FE88611E7E64A300281EBF /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FE88601E7E64A300281EBF /* EventKit.framework */; };
+		16FE88631E7E64B200281EBF /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16FE88621E7E64B200281EBF /* EventKitUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		16FE88541E7DE2FB00281EBF /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		16FE88571E7E47AC00281EBF /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
 		16FE88591E7E4BD100281EBF /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
+		16FE885D1E7E5E4D00281EBF /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		16FE88601E7E64A300281EBF /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		16FE88621E7E64B200281EBF /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16FE88631E7E64B200281EBF /* EventKitUI.framework in Frameworks */,
+				16FE88611E7E64A300281EBF /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +119,7 @@
 				165D1D2D1E62797E0083322E /* Pray4MeTests */,
 				165D1D381E62797E0083322E /* Pray4MeUITests */,
 				165D1D151E62797E0083322E /* Products */,
+				16FE885F1E7E64A300281EBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,10 +139,10 @@
 				165D1D171E62797E0083322E /* AppDelegate.swift */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
 				165D1D671E65250F0083322E /* ProfileViewController.swift */,
+				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
 				16FE884D1E7DAE6700281EBF /* Prayer Calendar */,
 				165D1D491E627CE10083322E /* SettingsViewController.swift */,
 				16BB056E1E6D16DA00429A12 /* Prayer Feed */,
-				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
 				16FE883B1E7B7F6500281EBF /* Assets.xcassets */,
 				165D1D221E62797E0083322E /* LaunchScreen.storyboard */,
 				165D1D251E62797E0083322E /* Info.plist */,
@@ -176,6 +185,7 @@
 		16FE884D1E7DAE6700281EBF /* Prayer Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				16FE885D1E7E5E4D00281EBF /* CalendarViewController.swift */,
 				16FE88561E7DE31400281EBF /* Calendar View */,
 			);
 			name = "Prayer Calendar";
@@ -192,6 +202,15 @@
 				16FE88501E7DDD0400281EBF /* CalendarFlowLayout.swift */,
 			);
 			name = "Calendar View";
+			sourceTree = "<group>";
+		};
+		16FE885F1E7E64A300281EBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16FE88621E7E64B200281EBF /* EventKitUI.framework */,
+				16FE88601E7E64A300281EBF /* EventKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +356,7 @@
 				16FE884F1E7DB05300281EBF /* PrayerCalenderView.swift in Sources */,
 				16FE88101E78D0D000281EBF /* PrayerFeelingSource.swift in Sources */,
 				16FE873D1E726B7000281EBF /* PrayerFeelingPickerController.swift in Sources */,
+				16FE885E1E7E5E4D00281EBF /* CalendarViewController.swift in Sources */,
 				165D1D681E65250F0083322E /* ProfileViewController.swift in Sources */,
 				165D1D181E62797E0083322E /* AppDelegate.swift in Sources */,
 				165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */,
