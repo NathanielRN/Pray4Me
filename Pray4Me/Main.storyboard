@@ -30,23 +30,46 @@
             <point key="canvasLocation" x="-1050" y="969"/>
         </scene>
         <!--Calender-->
-        <scene sceneID="89W-6o-SfT">
+        <scene sceneID="pnf-rb-V8k">
             <objects>
-                <viewController title="Calender" id="ySN-k2-Wsj" sceneMemberID="viewController">
+                <navigationController id="CZO-3S-BzK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="jeM-Bq-1FT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N6y-0E-NKh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uFK-n1-bCE" kind="relationship" relationship="rootViewController" id="QQ4-nH-Yc1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02g-NV-rgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="984"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iGG-if-RWM">
+            <objects>
+                <viewController id="uFK-n1-bCE" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="f3E-1Y-Uhp"/>
-                        <viewControllerLayoutGuide type="bottom" id="g2n-sH-1Gb"/>
+                        <viewControllerLayoutGuide type="top" id="HO7-dK-f38"/>
+                        <viewControllerLayoutGuide type="bottom" id="zFF-eR-ndO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zPX-Hv-jK4">
+                    <view key="view" contentMode="scaleToFill" id="IcI-6Q-H4s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-HR-6c6" customClass="PrayerCalendarView" customModule="Pray4Me" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="4mY-aq-zsw"/>
+                    <navigationItem key="navigationItem" id="fRO-xs-VmS"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nbW-ow-eoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7j6-tu-uX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="291"/>
+            <point key="canvasLocation" x="784.79999999999995" y="980.95952023988013"/>
         </scene>
         <!--Settings-->
         <scene sceneID="026-eI-VUh">
@@ -321,7 +344,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hOf-gJ-xGl" kind="relationship" relationship="viewControllers" id="YYv-wg-HMh"/>
-                        <segue destination="ySN-k2-Wsj" kind="relationship" relationship="viewControllers" id="n5k-fk-wXF"/>
+                        <segue destination="CZO-3S-BzK" kind="relationship" relationship="viewControllers" id="iYj-fh-u0j"/>
                         <segue destination="qyL-75-glk" kind="relationship" relationship="viewControllers" id="WGH-y4-oqM"/>
                         <segue destination="102-HH-rJY" kind="relationship" relationship="viewControllers" id="SSk-6Q-vKS"/>
                     </connections>

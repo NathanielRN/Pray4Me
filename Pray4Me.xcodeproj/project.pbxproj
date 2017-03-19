@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		165D1D181E62797E0083322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D171E62797E0083322E /* AppDelegate.swift */; };
-		165D1D1C1E62797E0083322E /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D1B1E62797E0083322E /* CalenderViewController.swift */; };
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
 		165D1D3A1E62797E0083322E /* Pray4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D391E62797E0083322E /* Pray4MeUITests.swift */; };
@@ -24,6 +23,12 @@
 		16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */; };
 		16FE88101E78D0D000281EBF /* PrayerFeelingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */; };
 		16FE883C1E7B7F6500281EBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16FE883B1E7B7F6500281EBF /* Assets.xcassets */; };
+		16FE884F1E7DB05300281EBF /* PrayerCalenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE884E1E7DB05300281EBF /* PrayerCalenderView.swift */; };
+		16FE88511E7DDD0400281EBF /* CalendarFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88501E7DDD0400281EBF /* CalendarFlowLayout.swift */; };
+		16FE88531E7DE26A00281EBF /* EventLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88521E7DE26A00281EBF /* EventLocation.swift */; };
+		16FE88551E7DE2FB00281EBF /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88541E7DE2FB00281EBF /* CalendarEvent.swift */; };
+		16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88571E7E47AC00281EBF /* CalendarHeaderView.swift */; };
+		16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE88591E7E4BD100281EBF /* CalendarDayCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +51,6 @@
 /* Begin PBXFileReference section */
 		165D1D141E62797E0083322E /* Pray4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pray4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D171E62797E0083322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		165D1D1B1E62797E0083322E /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		165D1D231E62797E0083322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		165D1D251E62797E0083322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		165D1D2A1E62797E0083322E /* Pray4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pray4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,12 @@
 		16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeedSource.swift; sourceTree = "<group>"; };
 		16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeelingSource.swift; sourceTree = "<group>"; };
 		16FE883B1E7B7F6500281EBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16FE884E1E7DB05300281EBF /* PrayerCalenderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerCalenderView.swift; sourceTree = "<group>"; };
+		16FE88501E7DDD0400281EBF /* CalendarFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarFlowLayout.swift; sourceTree = "<group>"; };
+		16FE88521E7DE26A00281EBF /* EventLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventLocation.swift; sourceTree = "<group>"; };
+		16FE88541E7DE2FB00281EBF /* CalendarEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
+		16FE88571E7E47AC00281EBF /* CalendarHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		16FE88591E7E4BD100281EBF /* CalendarDayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDayCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +128,9 @@
 			isa = PBXGroup;
 			children = (
 				165D1D171E62797E0083322E /* AppDelegate.swift */,
-				165D1D1B1E62797E0083322E /* CalenderViewController.swift */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
 				165D1D671E65250F0083322E /* ProfileViewController.swift */,
+				16FE884D1E7DAE6700281EBF /* Prayer Calendar */,
 				165D1D491E627CE10083322E /* SettingsViewController.swift */,
 				16BB056E1E6D16DA00429A12 /* Prayer Feed */,
 				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
@@ -161,6 +171,27 @@
 				16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */,
 			);
 			name = "Prayer Feed";
+			sourceTree = "<group>";
+		};
+		16FE884D1E7DAE6700281EBF /* Prayer Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				16FE88561E7DE31400281EBF /* Calendar View */,
+			);
+			name = "Prayer Calendar";
+			sourceTree = "<group>";
+		};
+		16FE88561E7DE31400281EBF /* Calendar View */ = {
+			isa = PBXGroup;
+			children = (
+				16FE884E1E7DB05300281EBF /* PrayerCalenderView.swift */,
+				16FE88571E7E47AC00281EBF /* CalendarHeaderView.swift */,
+				16FE88591E7E4BD100281EBF /* CalendarDayCell.swift */,
+				16FE88521E7DE26A00281EBF /* EventLocation.swift */,
+				16FE88541E7DE2FB00281EBF /* CalendarEvent.swift */,
+				16FE88501E7DDD0400281EBF /* CalendarFlowLayout.swift */,
+			);
+			name = "Calendar View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,17 +332,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */,
+				16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */,
 				16BB056D1E6D048300429A12 /* RequestDetailsTableViewController.swift in Sources */,
+				16FE884F1E7DB05300281EBF /* PrayerCalenderView.swift in Sources */,
 				16FE88101E78D0D000281EBF /* PrayerFeelingSource.swift in Sources */,
 				16FE873D1E726B7000281EBF /* PrayerFeelingPickerController.swift in Sources */,
 				165D1D681E65250F0083322E /* ProfileViewController.swift in Sources */,
-				165D1D1C1E62797E0083322E /* CalenderViewController.swift in Sources */,
 				165D1D181E62797E0083322E /* AppDelegate.swift in Sources */,
 				165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */,
 				16AD3D181E6BB371001DE3B5 /* PrayerFeedTableViewController.swift in Sources */,
 				165D1D4A1E627CE10083322E /* SettingsViewController.swift in Sources */,
+				16FE88551E7DE2FB00281EBF /* CalendarEvent.swift in Sources */,
 				16BB05671E6CDE5300429A12 /* PrayerRequestCell.swift in Sources */,
+				16FE88531E7DE26A00281EBF /* EventLocation.swift in Sources */,
+				16FE88511E7DDD0400281EBF /* CalendarFlowLayout.swift in Sources */,
 				16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */,
+				16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
