@@ -45,9 +45,9 @@ class CalendarDayCell: UICollectionViewCell {
 	var isToday: Bool = false {
 		didSet {
 			if isToday == true {
-				self.someBackgroundView.backgroundColor = cellColorToday
+				self.dateBackgroundView.backgroundColor = cellColorToday
 			} else {
-				self.someBackgroundView.backgroundColor = cellColorDefault
+				self.dateBackgroundView.backgroundColor = cellColorDefault
 			}
 		}
 	}
@@ -56,14 +56,14 @@ class CalendarDayCell: UICollectionViewCell {
 		didSet {
 			
 			if isSelected == true {
-				self.someBackgroundView.layer.borderWidth = 2.0
+				self.dateBackgroundView.layer.borderWidth = 2.0
 			} else {
-				self.someBackgroundView.layer.borderWidth = 0.0
+				self.dateBackgroundView.layer.borderWidth = 0.0
 			}
 		}
 	}
 	
-	lazy var someBackgroundView: UIView = {
+	lazy var dateBackgroundView: UIView = {
 		
 		var viewFrame = self.frame.insetBy(dx: 3.0, dy: 3.0)
 		
@@ -74,7 +74,7 @@ class CalendarDayCell: UICollectionViewCell {
 		view.layer.borderColor = borderColor.cgColor
 		view.layer.borderWidth = 0.0
 		
-		view.center = CGPoint(x: self.bounds.size.width * 0.5, y: self.bounds.size.height * 5.0)
+		view.center = CGPoint(x: self.bounds.size.width * 0.5, y: self.bounds.size.height * 0.5)
 		
 		view.backgroundColor = cellColorDefault
 		
@@ -92,7 +92,7 @@ class CalendarDayCell: UICollectionViewCell {
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		
-		self.addSubview(self.someBackgroundView)
+		self.addSubview(self.dateBackgroundView)
 		
 		self.textLabel.frame = self.bounds
 		self.addSubview(self.textLabel)
