@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */; };
+		1602934C1E822F1B0039D3A9 /* EventsArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */; };
 		165D1D181E62797E0083322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D171E62797E0083322E /* AppDelegate.swift */; };
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerEventsTableViewController.swift; sourceTree = "<group>"; };
+		1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsArrayModel.swift; sourceTree = "<group>"; };
 		165D1D141E62797E0083322E /* Pray4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pray4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D171E62797E0083322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165D1D231E62797E0083322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -112,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1602934D1E822F2B0039D3A9 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */,
+				1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
 		165D1D0B1E62797E0083322E = {
 			isa = PBXGroup;
 			children = (
@@ -186,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				16FE885D1E7E5E4D00281EBF /* CalendarViewController.swift */,
+				1602934D1E822F2B0039D3A9 /* Table View */,
 				16FE88561E7DE31400281EBF /* Calendar View */,
 			);
 			name = "Prayer Calendar";
@@ -352,6 +366,7 @@
 			files = (
 				16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */,
 				16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */,
+				1602934C1E822F1B0039D3A9 /* EventsArrayModel.swift in Sources */,
 				16BB056D1E6D048300429A12 /* RequestDetailsTableViewController.swift in Sources */,
 				16FE884F1E7DB05300281EBF /* PrayerCalenderView.swift in Sources */,
 				16FE88101E78D0D000281EBF /* PrayerFeelingSource.swift in Sources */,
@@ -368,6 +383,7 @@
 				16FE88511E7DDD0400281EBF /* CalendarFlowLayout.swift in Sources */,
 				16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */,
 				16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */,
+				160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

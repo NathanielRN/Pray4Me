@@ -20,17 +20,14 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 		
 		calendarView.collectionDataSource = self
 		calendarView.prayerDelegate = self
-		
+		self.loadEventsInCalendar()
 		// change the code to get a vertical calender.
 		calendarView.direction = .horizontal
-		
 	}
 	
 	override func viewDidAppear(_ animated: Bool) {
 		
 		super.viewDidAppear(animated)
-		
-		self.loadEventsInCalendar()
 		
 		var tomorrowComponents = DateComponents()
 		tomorrowComponents.day = 1
@@ -82,24 +79,23 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 		
 		super.viewDidLayoutSubviews()
 		
-		let width = self.view.frame.size.width - 16.0 * 2
-		let height = width + 20.0
-		self.calendarView.frame = CGRect(x: 16.0, y: 52.0, width: width, height: height)
-		
+//		let width = self.view.frame.size.width - 16.0 * 2
+//		let height = width + 20.0
+//		self.calendarView.frame = CGRect(x: 16.0, y: 32.0, width: width, height: height)
 		
 	}
-	
-	
-	
+
 	// MARK : KDCalendarDelegate
 	
 	func calendar(_ calendar: PrayerCalendarView, didSelectDate date : Date, withEvents events: [CalendarEvent]) {
 		
 		for event in events {
 			print("You have an event starting at \(event.startDate) : \(event.title)")
+			self.tableViewController.eventsArraySource.eventsArray.append(event.title)
+			let indexPath = [IndexPath(row: self.tableViewController.eventsArraySource.eventsArray.count - 1, section: 0)]
+			self.tableViewController.prayerEvents?.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
 		}
 		print("Did Select: \(date) with Events: \(events.count)")
-		
 		
 		
 	}
@@ -107,6 +103,7 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 	func calendar(_ calendar: PrayerCalendarView, didScrollToMonth date : Date) {
 		
 		self.datePicker.setDate(date, animated: true)
+
 	}
 	
 	// MARK : Events
@@ -148,5 +145,16 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 			
 		}
 		
+	}
+	
+	var tableViewController: PrayerEventsTableViewController!
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		let segueName = segue.identifier
+		if segueName == "eventSegue" {
+			tableViewController = segue.destination as! PrayerEventsTableViewController
+			self.addChildViewController(tableViewController)
+			tableViewController.didMove(toParentViewController: self)
+		}
 	}
 }
