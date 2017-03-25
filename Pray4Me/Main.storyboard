@@ -30,23 +30,136 @@
             <point key="canvasLocation" x="-1050" y="969"/>
         </scene>
         <!--Calender-->
-        <scene sceneID="89W-6o-SfT">
+        <scene sceneID="pnf-rb-V8k">
             <objects>
-                <viewController title="Calender" id="ySN-k2-Wsj" sceneMemberID="viewController">
+                <navigationController id="CZO-3S-BzK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="jeM-Bq-1FT"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N6y-0E-NKh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uFK-n1-bCE" kind="relationship" relationship="rootViewController" id="QQ4-nH-Yc1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="02g-NV-rgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-232" y="984"/>
+        </scene>
+        <!--Prayer Calendar-->
+        <scene sceneID="iGG-if-RWM">
+            <objects>
+                <viewController title="Prayer Calendar" automaticallyAdjustsScrollViewInsets="NO" id="uFK-n1-bCE" customClass="CalendarViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="f3E-1Y-Uhp"/>
-                        <viewControllerLayoutGuide type="bottom" id="g2n-sH-1Gb"/>
+                        <viewControllerLayoutGuide type="top" id="HO7-dK-f38"/>
+                        <viewControllerLayoutGuide type="bottom" id="zFF-eR-ndO"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zPX-Hv-jK4">
+                    <view key="view" contentMode="scaleToFill" id="IcI-6Q-H4s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXe-48-jzN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wRi-ae-Ldz" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="558"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rsp-F0-d4w">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="558"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIX-HR-6c6" customClass="PrayerCalendarView" customModule="Pray4Me" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="0.0" width="335" height="350"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="335" id="4Wr-61-ZYa"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llj-f9-Qdh">
+                                                        <rect key="frame" x="0.0" y="350" width="375" height="208"/>
+                                                        <connections>
+                                                            <segue destination="rMg-5l-Uh1" kind="embed" identifier="eventSegue" id="wlE-M2-vnJ"/>
+                                                        </connections>
+                                                    </containerView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="mIX-HR-6c6" firstAttribute="centerX" secondItem="rsp-F0-d4w" secondAttribute="centerX" id="5E6-42-CoD"/>
+                                                    <constraint firstItem="mIX-HR-6c6" firstAttribute="top" secondItem="rsp-F0-d4w" secondAttribute="top" id="OZG-90-M97"/>
+                                                    <constraint firstItem="Llj-f9-Qdh" firstAttribute="leading" secondItem="rsp-F0-d4w" secondAttribute="leading" id="Ucp-8v-6l6"/>
+                                                    <constraint firstItem="Llj-f9-Qdh" firstAttribute="top" secondItem="mIX-HR-6c6" secondAttribute="bottom" id="oRY-gC-G31"/>
+                                                    <constraint firstItem="mIX-HR-6c6" firstAttribute="leading" secondItem="rsp-F0-d4w" secondAttribute="leading" priority="250" constant="20" id="rzP-HF-5HV"/>
+                                                    <constraint firstItem="Llj-f9-Qdh" firstAttribute="top" secondItem="rsp-F0-d4w" secondAttribute="top" constant="350" id="vB9-GG-OfH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Llj-f9-Qdh" secondAttribute="bottom" id="wCR-Nv-YkF"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="558" id="8bE-OO-s1z"/>
+                                            <constraint firstItem="rsp-F0-d4w" firstAttribute="top" secondItem="wRi-ae-Ldz" secondAttribute="top" id="Uhd-Sr-RAG"/>
+                                            <constraint firstItem="rsp-F0-d4w" firstAttribute="centerY" secondItem="wRi-ae-Ldz" secondAttribute="centerY" id="ePY-uZ-95E"/>
+                                            <constraint firstItem="rsp-F0-d4w" firstAttribute="leading" secondItem="wRi-ae-Ldz" secondAttribute="leading" id="miH-g5-K3B"/>
+                                            <constraint firstItem="rsp-F0-d4w" firstAttribute="centerX" secondItem="wRi-ae-Ldz" secondAttribute="centerX" id="qMK-8o-eYd"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="wRi-ae-Ldz" secondAttribute="bottom" constant="-4" id="Cmo-n9-qVo"/>
+                                    <constraint firstItem="wRi-ae-Ldz" firstAttribute="width" secondItem="jXe-48-jzN" secondAttribute="width" id="FfJ-Jn-aOo"/>
+                                    <constraint firstAttribute="trailing" secondItem="wRi-ae-Ldz" secondAttribute="trailing" id="NhQ-71-HU1"/>
+                                    <constraint firstItem="wRi-ae-Ldz" firstAttribute="leading" secondItem="jXe-48-jzN" secondAttribute="leading" id="YDs-uj-io0"/>
+                                    <constraint firstItem="wRi-ae-Ldz" firstAttribute="top" secondItem="jXe-48-jzN" secondAttribute="top" id="eOY-xW-APb"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="jXe-48-jzN" firstAttribute="top" secondItem="HO7-dK-f38" secondAttribute="bottom" id="CXr-KV-YYV"/>
+                            <constraint firstItem="zFF-eR-ndO" firstAttribute="top" secondItem="jXe-48-jzN" secondAttribute="bottom" priority="750" id="NxL-7Y-bde"/>
+                            <constraint firstItem="jXe-48-jzN" firstAttribute="leading" secondItem="IcI-6Q-H4s" secondAttribute="leadingMargin" constant="-16" id="rYG-ub-9AH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jXe-48-jzN" secondAttribute="trailing" constant="-16" id="skc-TZ-2mE"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="4mY-aq-zsw"/>
+                    <navigationItem key="navigationItem" title="Prayer Calendar" id="fRO-xs-VmS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="FuS-nP-Kvd"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendarView" destination="mIX-HR-6c6" id="Zla-M8-Lmr"/>
+                        <outlet property="calenderEventContainer" destination="Llj-f9-Qdh" id="n0j-We-SgW"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nbW-ow-eoa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7j6-tu-uX6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-117" y="291"/>
+            <point key="canvasLocation" x="784.79999999999995" y="980.95952023988013"/>
+        </scene>
+        <!--Prayer Events Table View Controller-->
+        <scene sceneID="ZsH-YL-Iu9">
+            <objects>
+                <tableViewController id="rMg-5l-Uh1" customClass="PrayerEventsTableViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f5h-kW-w9l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="208"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PrayerEventCell" id="FHa-fA-zPO">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FHa-fA-zPO" id="wEP-dx-5DS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="rMg-5l-Uh1" id="m1b-PA-Dm2"/>
+                            <outlet property="delegate" destination="rMg-5l-Uh1" id="oAD-0h-vvd"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="prayerEvents" destination="f5h-kW-w9l" id="9aL-zM-rLY"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6cv-Vf-ODX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1187" y="1732"/>
         </scene>
         <!--Settings-->
         <scene sceneID="026-eI-VUh">
@@ -321,7 +434,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hOf-gJ-xGl" kind="relationship" relationship="viewControllers" id="YYv-wg-HMh"/>
-                        <segue destination="ySN-k2-Wsj" kind="relationship" relationship="viewControllers" id="n5k-fk-wXF"/>
+                        <segue destination="CZO-3S-BzK" kind="relationship" relationship="viewControllers" id="iYj-fh-u0j"/>
                         <segue destination="qyL-75-glk" kind="relationship" relationship="viewControllers" id="WGH-y4-oqM"/>
                         <segue destination="102-HH-rJY" kind="relationship" relationship="viewControllers" id="SSk-6Q-vKS"/>
                     </connections>

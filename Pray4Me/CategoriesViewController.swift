@@ -9,6 +9,8 @@
 import UIKit
 
 class Categories: UIViewController {
+	
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,6 @@ class Categories: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
