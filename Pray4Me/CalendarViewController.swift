@@ -91,9 +91,11 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 		
 		for event in events {
 			print("You have an event starting at \(event.startDate) : \(event.title)")
-			self.tableViewController.eventsArraySource.eventsArray.append(event.title)
-			let indexPath = [IndexPath(row: self.tableViewController.eventsArraySource.eventsArray.count - 1, section: 0)]
+			self.tableViewController.prayerEvents?.beginUpdates()
+			self.tableViewController.eventsArraySource.eventsArray.insert(event.title, at: 0)
+			let indexPath = [IndexPath(row: 0, section: 0)]
 			self.tableViewController.prayerEvents?.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
+			self.tableViewController.prayerEvents?.endUpdates()
 		}
 		print("Did Select: \(date) with Events: \(events.count)")
 		
