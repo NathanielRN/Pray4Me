@@ -12,7 +12,7 @@ import EventKit
 class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, PrayerCalendarViewDataSource {
 
 	@IBOutlet weak var calendarView: PrayerCalendarView!
-	@IBOutlet weak var datePicker: UIDatePicker!
+//	@IBOutlet weak var datePicker: UIDatePicker!
 
 	override func viewDidLoad() {
 		
@@ -42,7 +42,7 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 		}
 		
 		self.calendarView.setDisplayDate(today, animated: false)
-		self.datePicker.setDate(today, animated: false)
+		//self.datePicker.setDate(today, animated: false)
 		
 		
 	}
@@ -102,7 +102,7 @@ class CalendarViewController: UIViewController, PrayerCalendarViewDelegate, Pray
 	
 	func calendar(_ calendar: PrayerCalendarView, didScrollToMonth date : Date) {
 		
-		self.datePicker.setDate(date, animated: true)
+		//self.datePicker.setDate(date, animated: true)
 
 	}
 	
