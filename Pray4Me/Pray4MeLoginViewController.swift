@@ -21,7 +21,9 @@ class Pray4MeLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 		loginButton.delegate = self
 
 		if (FBSDKAccessToken.current() != nil) {
-			// User is logged in, do work such as go to next view controller.
+			let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+			let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Startup") as UIViewController
+			self.present(vc, animated: true, completion: nil)
 		}
         // Do any additional setup after loading the view.
     }

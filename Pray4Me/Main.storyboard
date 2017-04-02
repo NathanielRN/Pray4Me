@@ -433,11 +433,19 @@
         <!--Profile Settings-->
         <scene sceneID="p0P-Lp-Kzt">
             <objects>
-                <tableViewController title="Profile Settings" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="95K-pl-Jfj" sceneMemberID="viewController">
+                <tableViewController title="Profile Settings" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="95K-pl-Jfj" customClass="Settings" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="gqr-Xi-APv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="QBg-f4-zhd">
+                            <rect key="frame" x="0.0" y="437" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="logOutOfFacebook:" destination="95K-pl-Jfj" eventType="touchUpInside" id="qtZ-pV-IkM"/>
+                            </connections>
+                        </button>
                         <sections>
                             <tableViewSection id="9Si-Iz-Sm7">
                                 <cells>

@@ -7,18 +7,13 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
-class Settings: UIViewController, FBSDKLoginButtonDelegate {
+class Settings: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-		let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-		loginButton.frame.origin.y = self.view.frame.midY + 100
-		loginButton.frame.origin.x = self.view.frame.midX
-		self.view.addSubview(loginButton)
-		loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-		loginButton.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -27,16 +22,15 @@ class Settings: UIViewController, FBSDKLoginButtonDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-	func loginButton(_ didCompleteWithloginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
 
+
+	@IBAction func logOutOfFacebook(_ sender: Any) {
+
+		FBSDKLoginManager().logOut()
+		let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+		let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Login") as UIViewController
+		self.present(vc, animated: true, completion: nil)
 	}
-	func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-
-			let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-			let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Login") as UIViewController
-			self.present(vc, animated: true, completion: nil)
-	}
-
     /*
     // MARK: - Navigation
 
