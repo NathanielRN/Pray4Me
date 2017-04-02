@@ -549,6 +549,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="fKY-hV-Kh7" kind="show" identifier="LoggedInSegue" id="fLL-Jh-abl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pms-pl-J3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
