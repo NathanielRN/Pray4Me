@@ -1,24 +1,28 @@
 //
-//  Settings.swift
+//  Pray4MeLoginViewController.swift
 //  Pray4Me
 //
-//  Created by Nathaniel Ruiz on 2017-02-25.
+//  Created by Nathaniel Ruiz on 2017-04-01.
 //  Copyright © 2017 Nathaniel Ruiz. All rights reserved.
 //
 
 import UIKit
 
-class Settings: UIViewController, FBSDKLoginButtonDelegate {
+class Pray4MeLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-		loginButton.frame.origin.y = self.view.frame.midY + 100
-		loginButton.frame.origin.x = self.view.frame.midX
+		loginButton.center = self.view.center
 		self.view.addSubview(loginButton)
 		loginButton.readPermissions = ["public_profile", "email", "user_friends"]
 		loginButton.delegate = self
+
+		if (FBSDKAccessToken.current() != nil) {
+			// User is logged in, do work such as go to next view controller.
+		}
         // Do any additional setup after loading the view.
     }
 
@@ -29,13 +33,15 @@ class Settings: UIViewController, FBSDKLoginButtonDelegate {
 
 	func loginButton(_ didCompleteWithloginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!){
 
+		if error == nil {
+			let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+			let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Startup") as UIViewController
+			self.present(vc, animated: true, completion: nil)
+		}
 	}
 	func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
-
-			let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-			let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Login") as UIViewController
-			self.present(vc, animated: true, completion: nil)
 	}
+    
 
     /*
     // MARK: - Navigation

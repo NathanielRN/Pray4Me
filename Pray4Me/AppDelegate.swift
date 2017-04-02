@@ -40,6 +40,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		let navigationController: UINavigationController? = tabBarController?.viewControllers?[0] as! UINavigationController?
 		let prayerFeedTableViewController: PrayerFeedTableViewController? = navigationController?.viewControllers[0] as! PrayerFeedTableViewController?
 		prayerFeedTableViewController?.prayerRequestsSource.prayerRequests = prayerRequests
+
+		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+
 		return true
 	}
 
@@ -65,6 +68,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
+//	private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+//		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+//		// Add any custom logic here.
+//		return true
+//	}
 
+	func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+		let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+		// Add any custom logic here.
+		return handled
+	}
 }
 
