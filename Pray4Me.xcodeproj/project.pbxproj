@@ -13,6 +13,8 @@
 		1634D86E1E909D2B0021F6C1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D86D1E909D2B0021F6C1 /* FBSDKCoreKit.framework */; };
 		1634D8701E909D390021F6C1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */; };
 		1634D8721E909D430021F6C1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D8711E909D430021F6C1 /* FBSDKLoginKit.framework */; };
+		1634D87D1E91E31B0021F6C1 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */; };
+		1634D8801E91E57B0021F6C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */; };
 		165D1D181E62797E0083322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D171E62797E0083322E /* AppDelegate.swift */; };
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
@@ -65,6 +67,8 @@
 		1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		1634D8711E909D430021F6C1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		1634D8731E909DD90021F6C1 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Bridging-Header.h"; path = "Pray4Me/Bridging-Header.h"; sourceTree = "<group>"; };
+		1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		165D1D141E62797E0083322E /* Pray4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pray4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D171E62797E0083322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165D1D231E62797E0083322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				165D1D491E627CE10083322E /* SettingsViewController.swift */,
+				1634D87E1E91E5580021F6C1 /* SettingsTable */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -178,6 +183,22 @@
 				1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */,
 			);
 			name = "Login Page";
+			sourceTree = "<group>";
+		};
+		1634D87B1E91E2FE0021F6C1 /* Logged Out */ = {
+			isa = PBXGroup;
+			children = (
+				1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */,
+			);
+			name = "Logged Out";
+			sourceTree = "<group>";
+		};
+		1634D87E1E91E5580021F6C1 /* SettingsTable */ = {
+			isa = PBXGroup;
+			children = (
+				1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */,
+			);
+			name = SettingsTable;
 			sourceTree = "<group>";
 		};
 		165D1D0B1E62797E0083322E = {
@@ -207,6 +228,7 @@
 			children = (
 				1634D8511E908E790021F6C1 /* Supporting Files */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
+				1634D87B1E91E2FE0021F6C1 /* Logged Out */,
 				1634D8561E9091010021F6C1 /* Login Page */,
 				1634D8551E9090010021F6C1 /* Profile */,
 				1634D8541E908FF80021F6C1 /* Categories */,
@@ -440,7 +462,9 @@
 				16FE88531E7DE26A00281EBF /* EventLocation.swift in Sources */,
 				16FE88511E7DDD0400281EBF /* CalendarFlowLayout.swift in Sources */,
 				16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */,
+				1634D87D1E91E31B0021F6C1 /* LoggedOutViewController.swift in Sources */,
 				16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */,
+				1634D8801E91E57B0021F6C1 /* SettingsTableViewController.swift in Sources */,
 				160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
