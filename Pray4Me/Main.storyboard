@@ -603,12 +603,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pms-pl-J3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2949.5999999999999" y="-20.239880059970016"/>
+            <point key="canvasLocation" x="-2262" y="-37"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Startup Controller-->
         <scene sceneID="m9L-HG-6gN">
             <objects>
-                <tabBarController storyboardIdentifier="Startup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fKY-hV-Kh7" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Startup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fKY-hV-Kh7" customClass="StartupController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="9Eg-Va-BnE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

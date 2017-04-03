@@ -13,22 +13,11 @@ class Pray4MeLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//		if (FBSDKAccessToken.current() != nil) {
-//			let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-//			let vc : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Startup") as UIViewController
-//			self.present(vc, animated: true, completion: nil)
-//		}
-
-//		let loginButton: FBSDKLoginButton = FBSDKLoginButton()
-//		loginButton.center = self.view.center
-//		self.view.addSubview(loginButton)
-//		loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-//		loginButton.delegate = self
-        // Do any additional setup after loading the view.
     }
 
 	override func viewDidAppear(_ animated: Bool) {
+
+		// Must perform in view Did appear because the window isn't loaded onto the hierarchy until this point!
 		if (FBSDKAccessToken.current() != nil) {
 			self.performSegue(withIdentifier: "LoggedInSegue", sender: nil)
 			return
