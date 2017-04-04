@@ -21,3 +21,13 @@ http://stackoverflow.com/questions/15610152/logout-of-facebook-in-app-using-face
 
 http://stackoverflow.com/questions/36915725/attempt-to-present-whose-view-is-not-in-the-window-hierarchy
 
+https://developers.facebook.com/docs/ios/graph
+
+http://stackoverflow.com/questions/39641676/type-any-has-no-subscript-members-swift-3-0
+
+http://stackoverflow.com/questions/31314124/get-email-and-name-facebook-sdk-v4-4-0-swift
+
+http://stackoverflow.com/questions/29471243/getting-users-personal-info-from-facebook-in-ios
+
+http://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-content-compression-resistance-priority
+
