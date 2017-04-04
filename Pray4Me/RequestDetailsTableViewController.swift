@@ -36,25 +36,15 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 		pictureRequest?.start(completionHandler: {
 			(connection, result, error) -> Void in
 			if error == nil {
-				//print("\(String(describing: result))")
 				let r = result as! NSDictionary
 				let urlPlace = r["data"]
 				let url = urlPlace as! NSDictionary
 				let finalUrl = url["url"]
-				print( "This is:  \(r)")
-				print( "This is not:  \(urlPlace)")
-				print( "This is not fun:  \(finalUrl)")
 				let somethingGood = finalUrl!
-				print( "This is not fun again:  \(somethingGood)")
 				let anotherOne = String(describing: somethingGood)
-				print( "This string again:  \(anotherOne) of type \(anotherOne.self)")
 				let lastOne = NSURL(string: anotherOne)
-				print( "This url:  \(lastOne)")
-				print( "This url sucks:  \(lastOne!)")
 				if let data = NSData(contentsOf: lastOne! as URL) {
-				print( "no fun days fo rsure: \(data)")
 				daImage = UIImage(data: data as Data)!
-				print( "no fun days: \(prayer.userAvatar)")
 				group.leave()
 				}
 
@@ -64,10 +54,6 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 		})
 		group.notify(queue: .main) {
 			prayer.userAvatar = daImage
-
-
-		print( "no fun days again: \(String(describing: prayer.userAvatar))")
-
 		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
 		}
 	}
