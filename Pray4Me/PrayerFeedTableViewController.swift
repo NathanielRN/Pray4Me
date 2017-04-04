@@ -14,8 +14,6 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 
 	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, prayerToAdd prayer: PrayerRequest) {
 		self.prayerRequestsSource.prayerRequests.append(prayer)
-		print("here is: \(prayer.userName)")
-		print("here is: \(prayer.userAvatar)")
 		let indexPath = [IndexPath(row: self.prayerRequestsSource.prayerRequests.count - 1, section: 0)]
 		self.tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
 		controller.dismiss(animated: true, completion: { _ in })
@@ -52,6 +50,7 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		cell.userNameLabel.text = prayer?.userName
 		cell.requestLabel.text = prayer?.requestString
 		cell.userAvatar.image = prayer?.userAvatar
+		cell.feelingLabel.text = prayer?.userFeeling
 		return cell
     }
 

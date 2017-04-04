@@ -19,19 +19,16 @@ class StartupController: UITabBarController {
 		var prayer = PrayerRequest()
 		prayer.userName = "Bill Evans"
 		prayer.requestString = "Tic-Tac-Toe"
-		prayer.reputation = 4
 		prayer.userAvatar = #imageLiteral(resourceName: "Rayna_Blinding_Teeth")
 		prayerRequests.append(prayer)
 		prayer = PrayerRequest()
 		prayer.userName = "Oscar Peterson"
 		prayer.requestString = "Spin the Bottle a;jfha; sldkfja; sldkfjal;sd kjfa;lk sdjf;lask djf;laksdjf ;laksdjf;la ksdjfl;a ksdjf;l kajsd;lf k jasl;d fjkads;fsk l;kkdl;sfjk;ld skfjas;d lkfjadl s;kfjas;ld kfja;lskdfj; laskdjf;laskdj f;laskdjf;laskd jfl;aksd jf;la ksjdfl; kajsd;lkf ja;sldkfj;l asdkfj;lasdkj f;laskdjf;lkasdj f;lkasjd;lkfjadls;k fjl;as dkjfl;askd jf;laksdjf ;lkasdjfl ;kasdjf;lkasjd ;lfkjas; ldkfja;lsk djf;laskdjf ;lkasdjf;l aksdjf;la ksjdfl; kasdj"
-		prayer.reputation = 5
 		prayer.userAvatar = UIImage(named: "Rayna_Future_Programmer")
 		prayerRequests.append(prayer)
 		prayer = PrayerRequest()
 		prayer.userName = "Dave Brubeck"
 		prayer.requestString = "Texas Hold’em Poker"
-		prayer.reputation = 2
 		prayer.userAvatar = UIImage(named: "Rayna_Smarticle_Particle")
 		prayerRequests.append(prayer)
 		let tabBarController: UITabBarController? = (self as UITabBarController)

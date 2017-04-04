@@ -42,6 +42,23 @@ class Pray4MeLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 	}
 	func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!){
 	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		let currentUserRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"email, name, picture, friends"])
+		_ = currentUserRequest?.start(completionHandler: { connection, result, error in
+
+			if error == nil {
+				print("Got 'em: \(String(describing: result))")
+				//Must write to original shared instance and can't just assign instance to variable bc variable gets destroyed when leaving scope!
+				FacebookUser.sharedInstanceOfMe.userName = (result as AnyObject)["name"]! as? String
+				FacebookUser.sharedInstanceOfMe.userEmail = (result as AnyObject)["email"]! as? String
+				FacebookUser.sharedInstanceOfMe.userProfilePicture = UIImage(data: NSData(contentsOf: NSURL(string: ((((result as AnyObject)["picture"] as AnyObject)["data"] as AnyObject)["url"]! as? String)!)! as URL)! as Data)
+				//FacebookUser.sharedInstanceOfMe.userFriendsArray = (result as AnyObject)["name"]! as? String
+
+			}
+		}
+		)
+	}
     
 
     /*

@@ -13,6 +13,7 @@ class PrayerRequestCell: UITableViewCell {
 	@IBOutlet weak var userNameLabel: UILabel!
 	@IBOutlet weak var requestLabel: UILabel!
 	@IBOutlet weak var userAvatar: UIImageView!
+	@IBOutlet weak var feelingLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

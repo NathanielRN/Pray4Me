@@ -23,6 +23,7 @@
 		165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D471E627BF30083322E /* CategoriesViewController.swift */; };
 		165D1D4A1E627CE10083322E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D491E627CE10083322E /* SettingsViewController.swift */; };
 		165D1D681E65250F0083322E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D671E65250F0083322E /* ProfileViewController.swift */; };
+		165F69AE1E935169000C128C /* Facebook User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165F69AD1E935169000C128C /* Facebook User.swift */; };
 		16AD3D181E6BB371001DE3B5 /* PrayerFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */; };
 		16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */; };
 		16BB05671E6CDE5300429A12 /* PrayerRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */; };
@@ -84,6 +85,7 @@
 		165D1D471E627BF30083322E /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		165D1D491E627CE10083322E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		165D1D671E65250F0083322E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		165F69AD1E935169000C128C /* Facebook User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Facebook User.swift"; sourceTree = "<group>"; };
 		16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeedTableViewController.swift; sourceTree = "<group>"; };
 		16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerRequest.swift; sourceTree = "<group>"; };
 		16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerRequestCell.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */,
+				165F69AD1E935169000C128C /* Facebook User.swift */,
 			);
 			name = "Login Page";
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165F69AE1E935169000C128C /* Facebook User.swift in Sources */,
 				16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */,
 				1634D8841E91F0500021F6C1 /* StartupController.swift in Sources */,
 				16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */,

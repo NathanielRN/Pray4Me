@@ -26,36 +26,10 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 	@IBAction func done(_ sender: Any) {
 		let prayer = PrayerRequest()
 		prayer.requestString = self.prayerTextView.text
-		prayer.userName = feeling
-		var daImage: UIImage?
-
-		let group = DispatchGroup()
-
-		group.enter()
-		let pictureRequest = FBSDKGraphRequest(graphPath: "me/picture?type=large&redirect=false", parameters: nil)
-		pictureRequest?.start(completionHandler: {
-			(connection, result, error) -> Void in
-			if error == nil {
-				let r = result as! NSDictionary
-				let urlPlace = r["data"]
-				let url = urlPlace as! NSDictionary
-				let finalUrl = url["url"]
-				let somethingGood = finalUrl!
-				let anotherOne = String(describing: somethingGood)
-				let lastOne = NSURL(string: anotherOne)
-				if let data = NSData(contentsOf: lastOne! as URL) {
-				daImage = UIImage(data: data as Data)!
-				group.leave()
-				}
-
-			} else {
-				print("\(String(describing: error))")
-			}
-		})
-		group.notify(queue: .main) {
-			prayer.userAvatar = daImage
+		prayer.userName = FacebookUser.sharedInstanceOfMe.userName
+		prayer.userAvatar = FacebookUser.sharedInstanceOfMe.userProfilePicture
+		prayer.userFeeling = feeling
 		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
-		}
 	}
 
 	@IBOutlet var prayerTextView: UITextView!
