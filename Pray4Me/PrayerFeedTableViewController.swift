@@ -33,6 +33,12 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
         super.didReceiveMemoryWarning()
     }
 
+	override func viewWillAppear(_ animated: Bool) {
+		tableView.reloadData()
+	}
+	@IBAction func reloadFeedData(_ sender: Any) {
+		tableView.reloadData()
+	}
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -49,7 +55,12 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		let prayer: PrayerRequest? = self.prayerRequestsSource.prayerRequests[indexPath.row]
 		cell.userNameLabel.text = prayer?.userName
 		cell.requestLabel.text = prayer?.requestString
-		cell.userAvatar.image = prayer?.userAvatar
+		if let profilePictureID = prayer?.userID {
+		let fbProfileImageURL = URL(string: "http://graph.facebook.com/\(String(describing: profilePictureID))/picture?type=square")
+		if let imageData = try? Data(contentsOf: fbProfileImageURL!) {
+			cell.userAvatar.image = UIImage(data: imageData)
+		}
+		}
 		cell.feelingLabel.text = prayer?.userFeeling
 		return cell
     }

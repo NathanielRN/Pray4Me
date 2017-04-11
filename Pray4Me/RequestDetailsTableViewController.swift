@@ -29,7 +29,9 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 		prayer.userName = FacebookUser.sharedInstanceOfMe.userName
 		prayer.userAvatar = FacebookUser.sharedInstanceOfMe.userProfilePicture
 		prayer.userFeeling = feeling
-		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
+		prayer.userID = FacebookUser.sharedInstanceOfMe.userID
+		//self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
+		self.keepPrayerForLater(thePrayer: prayer)
 	}
 
 	@IBOutlet var prayerTextView: UITextView!
@@ -83,4 +85,10 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 			feelingPickerViewController.delegateToHandleFeelingChoice = self
 		}
     }
+
+	// MARK: Give for server handling
+
+	func keepPrayerForLater(thePrayer: PrayerRequest) {
+		AppDelegate.appDelegate().prayerRequests.savePrayerToServer(prayerToBeSent: thePrayer)
+	}
 }
