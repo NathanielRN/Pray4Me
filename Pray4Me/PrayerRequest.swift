@@ -16,6 +16,6 @@ class PrayerRequest: NSObject {
 
 	var userAvatar: UIImage?
 
-	var reputation: Int?
+	var userFeeling: String?
 
 }

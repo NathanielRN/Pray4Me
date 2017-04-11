@@ -26,7 +26,9 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 	@IBAction func done(_ sender: Any) {
 		let prayer = PrayerRequest()
 		prayer.requestString = self.prayerTextView.text
-		prayer.userName = feeling
+		prayer.userName = FacebookUser.sharedInstanceOfMe.userName
+		prayer.userAvatar = FacebookUser.sharedInstanceOfMe.userProfilePicture
+		prayer.userFeeling = feeling
 		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
 	}
 

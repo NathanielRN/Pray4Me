@@ -50,6 +50,7 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		cell.userNameLabel.text = prayer?.userName
 		cell.requestLabel.text = prayer?.requestString
 		cell.userAvatar.image = prayer?.userAvatar
+		cell.feelingLabel.text = prayer?.userFeeling
 		return cell
     }
 

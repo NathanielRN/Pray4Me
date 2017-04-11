@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class Settings: UIViewController {
 
@@ -20,16 +21,9 @@ class Settings: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+// How to programmatically present a View Controller modally
+//	let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+//	let destinationViewController : UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "Login") as UIViewController
+//	self.present(destinationViewController, animated: true, completion: nil)
 }

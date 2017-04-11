@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */; };
 		1602934C1E822F1B0039D3A9 /* EventsArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */; };
+		1634D8581E9091250021F6C1 /* Pray4MeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */; };
+		1634D86E1E909D2B0021F6C1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D86D1E909D2B0021F6C1 /* FBSDKCoreKit.framework */; };
+		1634D8701E909D390021F6C1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */; };
+		1634D8721E909D430021F6C1 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D8711E909D430021F6C1 /* FBSDKLoginKit.framework */; };
+		1634D87D1E91E31B0021F6C1 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */; };
+		1634D8801E91E57B0021F6C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */; };
+		1634D8841E91F0500021F6C1 /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D8831E91F0500021F6C1 /* StartupController.swift */; };
 		165D1D181E62797E0083322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D171E62797E0083322E /* AppDelegate.swift */; };
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
@@ -16,6 +23,7 @@
 		165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D471E627BF30083322E /* CategoriesViewController.swift */; };
 		165D1D4A1E627CE10083322E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D491E627CE10083322E /* SettingsViewController.swift */; };
 		165D1D681E65250F0083322E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D671E65250F0083322E /* ProfileViewController.swift */; };
+		165F69AE1E935169000C128C /* Facebook User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165F69AD1E935169000C128C /* Facebook User.swift */; };
 		16AD3D181E6BB371001DE3B5 /* PrayerFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */; };
 		16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */; };
 		16BB05671E6CDE5300429A12 /* PrayerRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */; };
@@ -56,6 +64,14 @@
 /* Begin PBXFileReference section */
 		160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerEventsTableViewController.swift; sourceTree = "<group>"; };
 		1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsArrayModel.swift; sourceTree = "<group>"; };
+		1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pray4MeLoginViewController.swift; sourceTree = "<group>"; };
+		1634D86D1E909D2B0021F6C1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		1634D8711E909D430021F6C1 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		1634D8731E909DD90021F6C1 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
+		1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		1634D8831E91F0500021F6C1 /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
 		165D1D141E62797E0083322E /* Pray4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pray4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D171E62797E0083322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165D1D231E62797E0083322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +85,7 @@
 		165D1D471E627BF30083322E /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		165D1D491E627CE10083322E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		165D1D671E65250F0083322E /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		165F69AD1E935169000C128C /* Facebook User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Facebook User.swift"; sourceTree = "<group>"; };
 		16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeedTableViewController.swift; sourceTree = "<group>"; };
 		16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerRequest.swift; sourceTree = "<group>"; };
 		16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerRequestCell.swift; sourceTree = "<group>"; };
@@ -94,7 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1634D8701E909D390021F6C1 /* FBSDKShareKit.framework in Frameworks */,
 				16FE88631E7E64B200281EBF /* EventKitUI.framework in Frameworks */,
+				1634D8721E909D430021F6C1 /* FBSDKLoginKit.framework in Frameworks */,
+				1634D86E1E909D2B0021F6C1 /* FBSDKCoreKit.framework in Frameworks */,
 				16FE88611E7E64A300281EBF /* EventKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -125,6 +145,83 @@
 			name = "Table View";
 			sourceTree = "<group>";
 		};
+		1634D8511E908E790021F6C1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				165D1D171E62797E0083322E /* AppDelegate.swift */,
+				16FE883B1E7B7F6500281EBF /* Assets.xcassets */,
+				165D1D221E62797E0083322E /* LaunchScreen.storyboard */,
+				165D1D251E62797E0083322E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1634D8531E908FF20021F6C1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				165D1D491E627CE10083322E /* SettingsViewController.swift */,
+				1634D87E1E91E5580021F6C1 /* SettingsTable */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		1634D8541E908FF80021F6C1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		1634D8551E9090010021F6C1 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				165D1D671E65250F0083322E /* ProfileViewController.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		1634D8561E9091010021F6C1 /* Login Page */ = {
+			isa = PBXGroup;
+			children = (
+				1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */,
+				165F69AD1E935169000C128C /* Facebook User.swift */,
+			);
+			name = "Login Page";
+			sourceTree = "<group>";
+		};
+		1634D87B1E91E2FE0021F6C1 /* Logged Out */ = {
+			isa = PBXGroup;
+			children = (
+				1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */,
+			);
+			name = "Logged Out";
+			sourceTree = "<group>";
+		};
+		1634D87E1E91E5580021F6C1 /* SettingsTable */ = {
+			isa = PBXGroup;
+			children = (
+				1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */,
+			);
+			name = SettingsTable;
+			sourceTree = "<group>";
+		};
+		1634D8811E91ECE90021F6C1 /* Bridging Headers */ = {
+			isa = PBXGroup;
+			children = (
+				1634D8731E909DD90021F6C1 /* Bridging-Header.h */,
+			);
+			name = "Bridging Headers";
+			sourceTree = "<group>";
+		};
+		1634D8821E91F02C0021F6C1 /* Tab Bar Startup */ = {
+			isa = PBXGroup;
+			children = (
+				1634D8831E91F0500021F6C1 /* StartupController.swift */,
+			);
+			name = "Tab Bar Startup";
+			sourceTree = "<group>";
+		};
 		165D1D0B1E62797E0083322E = {
 			isa = PBXGroup;
 			children = (
@@ -149,16 +246,17 @@
 		165D1D161E62797E0083322E /* Pray4Me */ = {
 			isa = PBXGroup;
 			children = (
-				165D1D171E62797E0083322E /* AppDelegate.swift */,
+				1634D8811E91ECE90021F6C1 /* Bridging Headers */,
+				1634D8511E908E790021F6C1 /* Supporting Files */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
-				165D1D671E65250F0083322E /* ProfileViewController.swift */,
-				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
+				1634D8821E91F02C0021F6C1 /* Tab Bar Startup */,
+				1634D87B1E91E2FE0021F6C1 /* Logged Out */,
+				1634D8561E9091010021F6C1 /* Login Page */,
+				1634D8551E9090010021F6C1 /* Profile */,
+				1634D8541E908FF80021F6C1 /* Categories */,
 				16FE884D1E7DAE6700281EBF /* Prayer Calendar */,
-				165D1D491E627CE10083322E /* SettingsViewController.swift */,
+				1634D8531E908FF20021F6C1 /* Settings */,
 				16BB056E1E6D16DA00429A12 /* Prayer Feed */,
-				16FE883B1E7B7F6500281EBF /* Assets.xcassets */,
-				165D1D221E62797E0083322E /* LaunchScreen.storyboard */,
-				165D1D251E62797E0083322E /* Info.plist */,
 			);
 			path = Pray4Me;
 			sourceTree = "<group>";
@@ -221,6 +319,9 @@
 		16FE885F1E7E64A300281EBF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1634D8711E909D430021F6C1 /* FBSDKLoginKit.framework */,
+				1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */,
+				1634D86D1E909D2B0021F6C1 /* FBSDKCoreKit.framework */,
 				16FE88621E7E64B200281EBF /* EventKitUI.framework */,
 				16FE88601E7E64A300281EBF /* EventKit.framework */,
 			);
@@ -364,10 +465,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				165F69AE1E935169000C128C /* Facebook User.swift in Sources */,
 				16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */,
+				1634D8841E91F0500021F6C1 /* StartupController.swift in Sources */,
 				16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */,
 				1602934C1E822F1B0039D3A9 /* EventsArrayModel.swift in Sources */,
 				16BB056D1E6D048300429A12 /* RequestDetailsTableViewController.swift in Sources */,
+				1634D8581E9091250021F6C1 /* Pray4MeLoginViewController.swift in Sources */,
 				16FE884F1E7DB05300281EBF /* PrayerCalenderView.swift in Sources */,
 				16FE88101E78D0D000281EBF /* PrayerFeelingSource.swift in Sources */,
 				16FE873D1E726B7000281EBF /* PrayerFeelingPickerController.swift in Sources */,
@@ -382,7 +486,9 @@
 				16FE88531E7DE26A00281EBF /* EventLocation.swift in Sources */,
 				16FE88511E7DDD0400281EBF /* CalendarFlowLayout.swift in Sources */,
 				16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */,
+				1634D87D1E91E31B0021F6C1 /* LoggedOutViewController.swift in Sources */,
 				16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */,
+				1634D8801E91E57B0021F6C1 /* SettingsTableViewController.swift in Sources */,
 				160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,10 +634,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7556V46NNX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					/Users/NathanielRuiz/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Pray4Me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nathaniel.Pray4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pray4Me/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -541,10 +652,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7556V46NNX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)",
+					/Users/NathanielRuiz/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Pray4Me/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nathaniel.Pray4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pray4Me/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

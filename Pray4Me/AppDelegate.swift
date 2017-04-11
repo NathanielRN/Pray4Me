@@ -17,29 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		prayerRequests = [PrayerRequest]() /* capacity: 20 */
-		var prayer = PrayerRequest()
-		prayer.userName = "Bill Evans"
-		prayer.requestString = "Tic-Tac-Toe"
-		prayer.reputation = 4
-		prayer.userAvatar = #imageLiteral(resourceName: "Rayna_Blinding_Teeth")
-		prayerRequests.append(prayer)
-		prayer = PrayerRequest()
-		prayer.userName = "Oscar Peterson"
-		prayer.requestString = "Spin the Bottle a;jfha; sldkfja; sldkfjal;sd kjfa;lk sdjf;lask djf;laksdjf ;laksdjf;la ksdjfl;a ksdjf;l kajsd;lf k jasl;d fjkads;fsk l;kkdl;sfjk;ld skfjas;d lkfjadl s;kfjas;ld kfja;lskdfj; laskdjf;laskdj f;laskdjf;laskd jfl;aksd jf;la ksjdfl; kajsd;lkf ja;sldkfj;l asdkfj;lasdkj f;laskdjf;lkasdj f;lkasjd;lkfjadls;k fjl;as dkjfl;askd jf;laksdjf ;lkasdjfl ;kasdjf;lkasjd ;lfkjas; ldkfja;lsk djf;laskdjf ;lkasdjf;l aksdjf;la ksjdfl; kasdj"
-		prayer.reputation = 5
-		prayer.userAvatar = UIImage(named: "Rayna_Future_Programmer")
-		prayerRequests.append(prayer)
-		prayer = PrayerRequest()
-		prayer.userName = "Dave Brubeck"
-		prayer.requestString = "Texas Hold’em Poker"
-		prayer.reputation = 2
-		prayer.userAvatar = UIImage(named: "Rayna_Smarticle_Particle")
-		prayerRequests.append(prayer)
-		let tabBarController: UITabBarController? = (self.window?.rootViewController as? UITabBarController)
-		let navigationController: UINavigationController? = tabBarController?.viewControllers?[0] as! UINavigationController?
-		let prayerFeedTableViewController: PrayerFeedTableViewController? = navigationController?.viewControllers[0] as! PrayerFeedTableViewController?
-		prayerFeedTableViewController?.prayerRequestsSource.prayerRequests = prayerRequests
+		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
 		return true
 	}
 
@@ -58,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	}
 
 	func applicationDidBecomeActive(_ application: UIApplication) {
+		FBSDKAppEvents.activateApp() // This to use facebook app events analytics
 		// Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 	}
 
@@ -65,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 	}
 
-
+	func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+		let handled: Bool = FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+		// Add any custom logic here.
+		return handled
+	}
 }
 
