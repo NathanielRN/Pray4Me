@@ -297,6 +297,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="We all need prayer!" id="pgl-R2-Hjf">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="s2P-VN-IDz">
+                            <connections>
+                                <action selector="reloadFeedData:" destination="hGF-Kn-Ijw" id="AcB-Sx-JvM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="KPr-6F-bWw">
                             <connections>
                                 <segue destination="UCh-Si-pio" kind="presentation" identifier="RequestDetailsSegue" id="ehh-yc-Bs7"/>

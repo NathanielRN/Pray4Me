@@ -10,6 +10,6 @@ import Foundation
 
 class RequestsForPrayer {
 
-	var prayerRequests = [PrayerRequest]()
+	var prayerRequests = AppDelegate.appDelegate().prayerRequests.prayers
 
 }

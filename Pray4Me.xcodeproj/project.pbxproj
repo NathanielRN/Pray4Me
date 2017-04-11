@@ -28,6 +28,7 @@
 		16AD3D1A1E6BB609001DE3B5 /* PrayerRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */; };
 		16BB05671E6CDE5300429A12 /* PrayerRequestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */; };
 		16BB056D1E6D048300429A12 /* RequestDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BB056C1E6D048300429A12 /* RequestDetailsTableViewController.swift */; };
+		16BDE9571E9C698F005617F0 /* PrayersServerConnectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16BDE9561E9C698F005617F0 /* PrayersServerConnectionModel.swift */; };
 		16FE873D1E726B7000281EBF /* PrayerFeelingPickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE873C1E726B7000281EBF /* PrayerFeelingPickerController.swift */; };
 		16FE878E1E74EA6600281EBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16FE878D1E74EA6600281EBF /* Main.storyboard */; };
 		16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */; };
@@ -90,6 +91,7 @@
 		16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerRequest.swift; sourceTree = "<group>"; };
 		16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerRequestCell.swift; sourceTree = "<group>"; };
 		16BB056C1E6D048300429A12 /* RequestDetailsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDetailsTableViewController.swift; sourceTree = "<group>"; };
+		16BDE9561E9C698F005617F0 /* PrayersServerConnectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayersServerConnectionModel.swift; sourceTree = "<group>"; };
 		16FE873C1E726B7000281EBF /* PrayerFeelingPickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeelingPickerController.swift; sourceTree = "<group>"; };
 		16FE878D1E74EA6600281EBF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeedSource.swift; sourceTree = "<group>"; };
@@ -148,7 +150,6 @@
 		1634D8511E908E790021F6C1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				165D1D171E62797E0083322E /* AppDelegate.swift */,
 				16FE883B1E7B7F6500281EBF /* Assets.xcassets */,
 				165D1D221E62797E0083322E /* LaunchScreen.storyboard */,
 				165D1D251E62797E0083322E /* Info.plist */,
@@ -248,6 +249,8 @@
 			children = (
 				1634D8811E91ECE90021F6C1 /* Bridging Headers */,
 				1634D8511E908E790021F6C1 /* Supporting Files */,
+				165D1D171E62797E0083322E /* AppDelegate.swift */,
+				16BDE9551E9C6948005617F0 /* Prayers Model */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
 				1634D8821E91F02C0021F6C1 /* Tab Bar Startup */,
 				1634D87B1E91E2FE0021F6C1 /* Logged Out */,
@@ -291,6 +294,14 @@
 				16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */,
 			);
 			name = "Prayer Feed";
+			sourceTree = "<group>";
+		};
+		16BDE9551E9C6948005617F0 /* Prayers Model */ = {
+			isa = PBXGroup;
+			children = (
+				16BDE9561E9C698F005617F0 /* PrayersServerConnectionModel.swift */,
+			);
+			name = "Prayers Model";
 			sourceTree = "<group>";
 		};
 		16FE884D1E7DAE6700281EBF /* Prayer Calendar */ = {
@@ -468,6 +479,7 @@
 				165F69AE1E935169000C128C /* Facebook User.swift in Sources */,
 				16FE87901E76515E00281EBF /* PrayerFeedSource.swift in Sources */,
 				1634D8841E91F0500021F6C1 /* StartupController.swift in Sources */,
+				16BDE9571E9C698F005617F0 /* PrayersServerConnectionModel.swift in Sources */,
 				16FE88581E7E47AC00281EBF /* CalendarHeaderView.swift in Sources */,
 				1602934C1E822F1B0039D3A9 /* EventsArrayModel.swift in Sources */,
 				16BB056D1E6D048300429A12 /* RequestDetailsTableViewController.swift in Sources */,
