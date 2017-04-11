@@ -185,6 +185,7 @@
 		1634D8561E9091010021F6C1 /* Login Page */ = {
 			isa = PBXGroup;
 			children = (
+				1634D87B1E91E2FE0021F6C1 /* Logged Out */,
 				1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */,
 				165F69AD1E935169000C128C /* Facebook User.swift */,
 			);
@@ -250,10 +251,10 @@
 				1634D8811E91ECE90021F6C1 /* Bridging Headers */,
 				1634D8511E908E790021F6C1 /* Supporting Files */,
 				165D1D171E62797E0083322E /* AppDelegate.swift */,
+				16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */,
 				16BDE9551E9C6948005617F0 /* Prayers Model */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
 				1634D8821E91F02C0021F6C1 /* Tab Bar Startup */,
-				1634D87B1E91E2FE0021F6C1 /* Logged Out */,
 				1634D8561E9091010021F6C1 /* Login Page */,
 				1634D8551E9090010021F6C1 /* Profile */,
 				1634D8541E908FF80021F6C1 /* Categories */,
@@ -285,11 +286,10 @@
 		16BB056E1E6D16DA00429A12 /* Prayer Feed */ = {
 			isa = PBXGroup;
 			children = (
-				16BB056C1E6D048300429A12 /* RequestDetailsTableViewController.swift */,
 				16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */,
+				16BB056C1E6D048300429A12 /* RequestDetailsTableViewController.swift */,
 				16FE878F1E76515E00281EBF /* PrayerFeedSource.swift */,
 				16BB05661E6CDE5300429A12 /* PrayerRequestCell.swift */,
-				16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */,
 				16FE873C1E726B7000281EBF /* PrayerFeelingPickerController.swift */,
 				16FE880F1E78D0D000281EBF /* PrayerFeelingSource.swift */,
 			);

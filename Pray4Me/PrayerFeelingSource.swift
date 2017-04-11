@@ -10,5 +10,5 @@ import Foundation
 
 class PrayerFeeling {
 
-	static let feelings = ["Thinking", "Tired", "Worried", "Encouraged", "Joyful", "Trusting", "Wating"]
+	static let feelings = ["Global Feed", "Friends Only", "Private Feed"]
 }

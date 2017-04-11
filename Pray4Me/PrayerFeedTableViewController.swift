@@ -12,12 +12,12 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 
 	var prayerRequestsSource = RequestsForPrayer()
 
-	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, prayerToAdd prayer: PrayerRequest) {
-		self.prayerRequestsSource.prayerRequests.append(prayer)
-		let indexPath = [IndexPath(row: self.prayerRequestsSource.prayerRequests.count - 1, section: 0)]
-		self.tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
-		controller.dismiss(animated: true, completion: { _ in })
-	}
+//	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, prayerToAdd prayer: PrayerRequest) {
+//		self.prayerRequestsSource.prayerRequests.append(prayer)
+//		let indexPath = [IndexPath(row: self.prayerRequestsSource.prayerRequests.count - 1, section: 0)]
+//		self.tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
+//		controller.dismiss(animated: true, completion: { _ in })
+//	}
 
 	func requestDetailsDidCancel(_ controller: RequestDetailsTableViewController) {
 		controller.dismiss(animated: true, completion: { _ in })
@@ -56,27 +56,20 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		cell.userNameLabel.text = prayer?.userName
 		cell.requestLabel.text = prayer?.requestString
 		if let profilePictureID = prayer?.userID {
-		let fbProfileImageURL = URL(string: "http://graph.facebook.com/\(String(describing: profilePictureID))/picture?type=square")
-		if let imageData = try? Data(contentsOf: fbProfileImageURL!) {
-			cell.userAvatar.image = UIImage(data: imageData)
-		}
+			let fbProfileImageURL = URL(string: "http://graph.facebook.com/\(String(describing: profilePictureID))/picture?type=square")
+			if let imageData = try? Data(contentsOf: fbProfileImageURL!) {
+				cell.userAvatar.image = UIImage(data: imageData)
+			}
 		}
 		cell.feelingLabel.text = prayer?.userFeeling
 		return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
 	
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+			self.deleteThePrayer(thePrayer: self.prayerRequestsSource.prayerRequests[indexPath.row])
 			self.prayerRequestsSource.prayerRequests.remove(at: indexPath.row) // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade) // Delete the row on the table
         } else if editingStyle == .insert {
@@ -99,4 +92,8 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 			
 		}
     }
+
+	func deleteThePrayer(thePrayer: PrayerRequest) {
+		AppDelegate.appDelegate().prayerRequests.deletePrayerFromServer(prayerToBeDeleted: thePrayer)
+	}
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 let kBaseURL = "http://ingrids-macbook-pro.local:3000/"
-let kPrayerRequests = "prayerRequests"
+let kPrayerRequests = "prayerRequests/"
 let kFiles = "files"
 
 class PrayersServerConnectionModel {
@@ -37,17 +37,23 @@ class PrayersServerConnectionModel {
 	}
 
 	func parseAndAddPrayersToFeed(incomingArray: [Dictionary<AnyHashable, Any>]) {
-
 		for aPrayer in incomingArray {
 			let prayerCandidate = PrayerRequest(dictionaryWithInfo: aPrayer)
 			self.prayers.append(prayerCandidate)
-
 		}
-
 	}
 
-	func addPrayer() {
-
+	func parseAndDeletePrayerOnFeed(incomingArray: [Dictionary<AnyHashable, Any>]) {
+		for aPrayer in incomingArray {
+			let prayerCandidate = PrayerRequest(dictionaryWithInfo: aPrayer)
+			var index = 0
+			for currentPrayers in self.prayers {
+				index += 1
+				if currentPrayers.prayerServerID == prayerCandidate.prayerServerID {
+					self.prayers.remove(at: index)
+				}
+			}
+		}
 	}
 
 	func savePrayerToServer(prayerToBeSent: PrayerRequest) {
@@ -68,6 +74,7 @@ class PrayersServerConnectionModel {
 		let storeDataTask = uploadSession.dataTask(with: request, completionHandler: {
 			(data, uploadResponse, error) in
 			let successfulResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+			print("We got this back: \(String(describing: successfulResponseArray))")
 			self.parseAndAddPrayersToFeed(incomingArray: successfulResponseArray as! [Dictionary<AnyHashable, Any>])
 		})
 
@@ -75,7 +82,34 @@ class PrayersServerConnectionModel {
 
 	}
 
+	func deletePrayerFromServer(prayerToBeDeleted: PrayerRequest) {
+		let prayerRequestsPath = kBaseURL + kPrayerRequests + prayerToBeDeleted.prayerServerID!
+		var requestToDelete = URLRequest(url: URL(string: prayerRequestsPath)!)
+		requestToDelete.httpMethod = "DELETE"
+
+		let prayerToBeDeletedAsJson = try? JSONSerialization.data(withJSONObject: prayerToBeDeleted.convertToDictionary(), options: JSONSerialization.WritingOptions(rawValue: 0))
+		requestToDelete.httpBody = prayerToBeDeletedAsJson
+
+		requestToDelete.addValue("application/json", forHTTPHeaderField: "Content-type")
+
+		let defaultSessionConfiguration = URLSessionConfiguration.default
+		let sessionToDelete = URLSession(configuration: defaultSessionConfiguration)
+
+		let deleteTask = sessionToDelete.dataTask(with: requestToDelete) { (data, responseFromServer, error) in
+
+			let arrayResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+			print("This after we delete: \(String(describing: arrayResponse)) with response \(String(describing: responseFromServer))")
+		}
+
+		deleteTask.resume()
+
+	}
+
 	func saveNewImageFirst() {
+
+	}
+
+	func addPrayer() {
 
 	}
 }

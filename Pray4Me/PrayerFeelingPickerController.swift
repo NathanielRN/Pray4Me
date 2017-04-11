@@ -16,7 +16,7 @@ class PrayerFeelingPickerController: UITableViewController {
 
 	var selectedIndex: Int?
 	weak var delegateToHandleFeelingChoice: FeelingPickerTableViewControllerDelegate?
-	var feelingChoice: String = "Thinking"
+	var feelingChoice: String = "Global Feed"
 
     override func viewDidLoad() {
         super.viewDidLoad()
