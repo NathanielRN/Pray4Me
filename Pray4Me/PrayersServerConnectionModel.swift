@@ -43,19 +43,6 @@ class PrayersServerConnectionModel {
 		}
 	}
 
-	func parseAndDeletePrayerOnFeed(incomingArray: [Dictionary<AnyHashable, Any>]) {
-		for aPrayer in incomingArray {
-			let prayerCandidate = PrayerRequest(dictionaryWithInfo: aPrayer)
-			var index = 0
-			for currentPrayers in self.prayers {
-				index += 1
-				if currentPrayers.prayerServerID == prayerCandidate.prayerServerID {
-					self.prayers.remove(at: index)
-				}
-			}
-		}
-	}
-
 	func savePrayerToServer(prayerToBeSent: PrayerRequest) {
 
 		let prayerRequestsPath = kBaseURL + kPrayerRequests
@@ -75,7 +62,7 @@ class PrayersServerConnectionModel {
 			(data, uploadResponse, error) in
 			let successfulResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			print("We got this back: \(String(describing: successfulResponseArray))")
-			self.parseAndAddPrayersToFeed(incomingArray: successfulResponseArray as! [Dictionary<AnyHashable, Any>])
+			self.parseAndAddPrayersToFeed(incomingArray: [successfulResponseArray as! Dictionary<AnyHashable, Any>])
 		})
 
 		storeDataTask.resume()

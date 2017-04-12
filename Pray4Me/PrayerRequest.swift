@@ -42,7 +42,7 @@ class PrayerRequest: NSObject {
 		//prayerAsDictionary["userAvatar"] = self.userAvatar
 		prayerAsDictionary["userFeeling"] = self.userFeeling
 		prayerAsDictionary["userID"] = self.userID
-		prayerAsDictionary["_id"] = self.prayerServerID
+		//prayerAsDictionary["_id"] = self.prayerServerID
 		return prayerAsDictionary
 	}
 

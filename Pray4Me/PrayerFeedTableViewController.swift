@@ -10,14 +10,14 @@ import UIKit
 
 class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelegate {
 
-	var prayerRequestsSource = RequestsForPrayer()
+	var prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
 
-//	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, prayerToAdd prayer: PrayerRequest) {
-//		self.prayerRequestsSource.prayerRequests.append(prayer)
-//		let indexPath = [IndexPath(row: self.prayerRequestsSource.prayerRequests.count - 1, section: 0)]
+	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController) {
+		//self.prayerRequestsSource.prayerRequests.append(prayer)
+//		let indexPath = [IndexPath(row: self.prayerRequestsSource.count - 1, section: 0)]
 //		self.tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
-//		controller.dismiss(animated: true, completion: { _ in })
-//	}
+		controller.dismiss(animated: true, completion: { _ in })
+	}
 
 	func requestDetailsDidCancel(_ controller: RequestDetailsTableViewController) {
 		controller.dismiss(animated: true, completion: { _ in })
@@ -37,6 +37,7 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		tableView.reloadData()
 	}
 	@IBAction func reloadFeedData(_ sender: Any) {
+		self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
 		tableView.reloadData()
 	}
     // MARK: - Table view data source
@@ -46,13 +47,13 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.prayerRequestsSource.prayerRequests.count
+        return self.prayerRequestsSource.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
 		let cell: PrayerRequestCell = tableView.dequeueReusableCell(withIdentifier: "PrayerRequestCell")! as! PrayerRequestCell
-		let prayer: PrayerRequest? = self.prayerRequestsSource.prayerRequests[indexPath.row]
+		let prayer: PrayerRequest? = self.prayerRequestsSource[indexPath.row]
 		cell.userNameLabel.text = prayer?.userName
 		cell.requestLabel.text = prayer?.requestString
 		if let profilePictureID = prayer?.userID {
@@ -69,8 +70,8 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-			self.deleteThePrayer(thePrayer: self.prayerRequestsSource.prayerRequests[indexPath.row])
-			self.prayerRequestsSource.prayerRequests.remove(at: indexPath.row) // Delete the row from the data source
+			self.deleteThePrayer(thePrayer: self.prayerRequestsSource[indexPath.row])
+			self.prayerRequestsSource.remove(at: indexPath.row) // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade) // Delete the row on the table
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view

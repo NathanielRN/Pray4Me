@@ -10,6 +10,7 @@ import UIKit
 
 protocol RequestDetailsDelegate: class {
 	func requestDetailsDidCancel (_ controller: RequestDetailsTableViewController)
+	func requestDetailsDidSubmit (_ controller: RequestDetailsTableViewController)
 }
 
 class RequestDetailsTableViewController: UITableViewController, FeelingPickerTableViewControllerDelegate {
@@ -28,8 +29,8 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 		prayer.userAvatar = FacebookUser.sharedInstanceOfMe.userProfilePicture
 		prayer.userFeeling = feeling
 		prayer.userID = FacebookUser.sharedInstanceOfMe.userID
-		//self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
 		self.keepPrayerForLater(thePrayer: prayer)
+		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self)
 	}
 
 	@IBOutlet var prayerTextView: UITextView!
