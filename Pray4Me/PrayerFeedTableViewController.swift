@@ -10,6 +10,7 @@ import UIKit
 
 class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelegate {
 
+	let noPrayersPrayer = PrayerRequest()
 	var prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
 
 	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController) {
@@ -37,8 +38,19 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		tableView.reloadData()
 	}
 	@IBAction func reloadFeedData(_ sender: Any) {
-		self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
-		tableView.reloadData()
+		AppDelegate.appDelegate().prayerRequests.prayers = []
+		AppDelegate.appDelegate().prayerRequests.importPrayerFeed()
+		DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in
+			guard let `self` = self else { return }
+			//print("Sum of times: \(time1 + time2)")
+			self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+			if self.prayerRequestsSource.isEmpty {
+				self.noPrayersPrayer.requestString = "No prayers available! Please check your connection or come back later! :)"
+				self.noPrayersPrayer.userAvatar = nil
+				self.prayerRequestsSource = [self.noPrayersPrayer]
+			}
+			self.tableView.reloadData()
+		}
 	}
     // MARK: - Table view data source
 

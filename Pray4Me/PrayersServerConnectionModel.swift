@@ -27,8 +27,10 @@ class PrayersServerConnectionModel {
 
 		let receiveTask = sessionForImport.dataTask(with: request) {
 			(data, response, error) in
+			if error == nil {
 			let receivedArrayFromResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			self.parseAndAddPrayersToFeed(incomingArray: receivedArrayFromResponse as! [Dictionary<AnyHashable, Any>])
+			}
 
 		}
 
@@ -60,9 +62,11 @@ class PrayersServerConnectionModel {
 
 		let storeDataTask = uploadSession.dataTask(with: request, completionHandler: {
 			(data, uploadResponse, error) in
+			if error == nil {
 			let successfulResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			print("We got this back: \(String(describing: successfulResponseArray))")
 			self.parseAndAddPrayersToFeed(incomingArray: [successfulResponseArray as! Dictionary<AnyHashable, Any>])
+			}
 		})
 
 		storeDataTask.resume()
@@ -83,9 +87,10 @@ class PrayersServerConnectionModel {
 		let sessionToDelete = URLSession(configuration: defaultSessionConfiguration)
 
 		let deleteTask = sessionToDelete.dataTask(with: requestToDelete) { (data, responseFromServer, error) in
-
+			if error == nil {
 			let arrayResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			print("This after we delete: \(String(describing: arrayResponse)) with response \(String(describing: responseFromServer))")
+			}
 		}
 
 		deleteTask.resume()
