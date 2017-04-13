@@ -12,11 +12,11 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 
 	let noPrayersPrayer = PrayerRequest()
 	var prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+	var refreshTableData: (() -> ())?
 
-	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController) {
-		//self.prayerRequestsSource.prayerRequests.append(prayer)
-//		let indexPath = [IndexPath(row: self.prayerRequestsSource.count - 1, section: 0)]
-//		self.tableView.insertRows(at: indexPath, with: UITableViewRowAnimation.automatic)
+	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, thePrayer: PrayerRequest) {
+		AppDelegate.appDelegate().prayerRequests.savePrayerToServer(prayerToBeSent: thePrayer) {
+			self.importAndRefreshTable() }
 		controller.dismiss(animated: true, completion: { _ in })
 	}
 
@@ -28,27 +28,36 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
         super.viewDidLoad()
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 60
-    }
+	}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
 	override func viewWillAppear(_ animated: Bool) {
-		tableView.reloadData()
+		if self.prayerRequestsSource.isEmpty {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+				guard let `self` = self else { return}
+				self.importAndRefreshTable()
+			}
+		}
 	}
 	@IBAction func reloadFeedData(_ sender: Any) {
-		AppDelegate.appDelegate().prayerRequests.prayers = []
+		self.importAndRefreshTable()
+	}
+
+	func importAndRefreshTable() {
 		AppDelegate.appDelegate().prayerRequests.importPrayerFeed() { [weak self] in
-			guard let `self` = self else { return }
-			//print("Sum of times: \(time1 + time2)")
-			self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
-			if self.prayerRequestsSource.isEmpty {
-				self.noPrayersPrayer.requestString = "No prayers available! Please check your connection or come back later! :)"
-				self.noPrayersPrayer.userAvatar = nil
-				self.prayerRequestsSource = [self.noPrayersPrayer]
+			DispatchQueue.main.async {
+				guard let `self` = self else { return }
+				self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+				if self.prayerRequestsSource.isEmpty {
+					self.noPrayersPrayer.requestString = "No prayers available! Please check your connection or come back later! :)"
+					self.noPrayersPrayer.userAvatar = nil
+					self.prayerRequestsSource = [self.noPrayersPrayer]
+				}
+				self.tableView.reloadData()
 			}
-			self.tableView.reloadData()
 		}
 	}
     // MARK: - Table view data source

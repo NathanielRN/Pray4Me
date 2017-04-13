@@ -17,6 +17,7 @@ class PrayersServerConnectionModel {
 	var prayers = [PrayerRequest]()
 
 	func importPrayerFeed(_ dataRecivedCallback: (() -> ())? = nil) {
+		self.prayers.removeAll()
 		let urlForRequestFetching = kBaseURL + kPrayerRequests
 		var request = URLRequest(url: URL(string: urlForRequestFetching)!)
 		request.httpMethod = "GET"
@@ -46,7 +47,7 @@ class PrayersServerConnectionModel {
 		readyToPopulateCallback?()
 	}
 
-	func savePrayerToServer(prayerToBeSent: PrayerRequest) {
+	func savePrayerToServer(prayerToBeSent: PrayerRequest, _ dataSavedCallback: (() -> ())? = nil) {
 
 		let prayerRequestsPath = kBaseURL + kPrayerRequests
 		let urlWherePrayerWillBeSaved = URL(string: prayerRequestsPath)
@@ -66,7 +67,7 @@ class PrayersServerConnectionModel {
 			if error == nil {
 			let successfulResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			print("We got this back: \(String(describing: successfulResponseArray))")
-			self.parseAndAddPrayersToFeed(incomingArray: [successfulResponseArray as! Dictionary<AnyHashable, Any>])
+			self.parseAndAddPrayersToFeed(incomingArray: [successfulResponseArray as! Dictionary<AnyHashable, Any>], dataSavedCallback)
 			}
 		})
 
