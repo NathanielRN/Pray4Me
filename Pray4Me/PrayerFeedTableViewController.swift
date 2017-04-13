@@ -39,8 +39,7 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 	}
 	@IBAction func reloadFeedData(_ sender: Any) {
 		AppDelegate.appDelegate().prayerRequests.prayers = []
-		AppDelegate.appDelegate().prayerRequests.importPrayerFeed()
-		DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { [weak self] in
+		AppDelegate.appDelegate().prayerRequests.importPrayerFeed() { [weak self] in
 			guard let `self` = self else { return }
 			//print("Sum of times: \(time1 + time2)")
 			self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
