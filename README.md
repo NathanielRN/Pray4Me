@@ -13,6 +13,12 @@ https://www.raywenderlich.com/129059/self-sizing-table-view-cells
 
 https://medium.com/@patrickhsanders/getting-started-guide-for-facebook-sdk-v4-8-0-with-swift-2-1-1-and-xcode-7-2-c05b1da11dad
 
+// Server Tutorials!
+
+https://www.raywenderlich.com/61078/write-simple-node-jsmongodb-web-service-ios-app
+
+https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
+
 Online code solutions reference:
 
 http://stackoverflow.com/questions/24167073/how-to-transition-to-a-new-view-controller-with-code-only-using-swift
@@ -31,3 +37,26 @@ http://stackoverflow.com/questions/29471243/getting-users-personal-info-from-fac
 
 http://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-content-compression-resistance-priority
 
+http://stackoverflow.com/questions/11442442/get-user-profile-picture-by-id
+
+http://stackoverflow.com/questions/4139219/how-do-you-trigger-a-block-after-a-delay-like-performselectorwithobjectafter
+
+//Server help!
+
+https://forums.raywenderlich.com/t/how-to-write-a-simple-node-js-mongodb-web-service-for-an-ios-app/6759
+
+http://stackoverflow.com/questions/7948789/mongodb-mongod-complains-that-there-is-no-data-db-folder
+
+http://stackoverflow.com/questions/15229412/unable-to-create-open-lock-file-data-mongod-lock-errno13-permission-denied
+
+http://stackoverflow.com/questions/26626186/object-mongoclient-has-no-method-open
+
+http://stackoverflow.com/questions/32631184/the-resource-could-not-be-loaded-because-the-app-transport-security-policy-requi
+
+https://devcenter.heroku.com/articles/config-vars
+
+https://en.wikipedia.org/wiki/LXC
+
+http://stackoverflow.com/questions/8731782/whats-a-repl-process-and-what-can-i-use-it-for
+
+http://stackoverflow.com/questions/6912584/how-to-get-get-query-string-variables-in-express-js-on-node-js?rq=1
