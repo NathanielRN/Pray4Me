@@ -47,12 +47,13 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 	}
 
 	func importAndRefreshTable() {
+		self.prayerRequestsSource = []
 		AppDelegate.appDelegate().prayerRequests.importPrayerFeed() { [weak self] in
 			DispatchQueue.main.async {
 				guard let `self` = self else { return }
 				self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
 				if self.prayerRequestsSource.isEmpty {
-					self.noPrayersPrayer.requestString = "No prayers available! Please check your connection or come back later! :)"
+					self.noPrayersPrayer.requestString = "No prayers available! Please check back later! :)"
 					self.noPrayersPrayer.userAvatar = nil
 					self.prayerRequestsSource = [self.noPrayersPrayer]
 				}

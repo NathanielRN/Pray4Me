@@ -31,6 +31,8 @@ class PrayersServerConnectionModel {
 			if error == nil {
 			let receivedArrayFromResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			self.parseAndAddPrayersToFeed(incomingArray: receivedArrayFromResponse as! [Dictionary<AnyHashable, Any>], dataRecivedCallback)
+			} else {
+				dataRecivedCallback?()
 			}
 
 		}
@@ -68,6 +70,8 @@ class PrayersServerConnectionModel {
 			let successfulResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
 			print("We got this back: \(String(describing: successfulResponseArray))")
 			self.parseAndAddPrayersToFeed(incomingArray: [successfulResponseArray as! Dictionary<AnyHashable, Any>], dataSavedCallback)
+			} else {
+				dataSavedCallback?()
 			}
 		})
 
