@@ -54,8 +54,17 @@ class Pray4MeLoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 				FacebookUser.sharedInstanceOfMe.userEmail = (result as AnyObject)["email"]! as? String
 				FacebookUser.sharedInstanceOfMe.userProfilePicture = UIImage(data: NSData(contentsOf: NSURL(string: ((((result as AnyObject)["picture"] as AnyObject)["data"] as AnyObject)["url"]! as? String)!)! as URL)! as Data)
 				FacebookUser.sharedInstanceOfMe.userID = (result as AnyObject)["id"]! as? String
-				//FacebookUser.sharedInstanceOfMe.userFriendsArray = (result as AnyObject)["name"]! as? String
-
+				let friendsArray = (((result as AnyObject)["friends"]! as AnyObject)["data"] as? NSArray)
+				if let unwrappedFriendsArray = friendsArray {
+					for friend in unwrappedFriendsArray {
+						let friendID = (friend as AnyObject)["id"] as? String
+						if let unwrappedFriendID = friendID {
+							FacebookUser.sharedInstanceOfMe.userFriendsIDArray?.append(unwrappedFriendID)
+						}
+					}
+				}
+			} else {
+				NSLog("Error getting facebook information")
 			}
 		}
 		)

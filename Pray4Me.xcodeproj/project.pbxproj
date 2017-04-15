@@ -16,6 +16,7 @@
 		1634D87D1E91E31B0021F6C1 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */; };
 		1634D8801E91E57B0021F6C1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */; };
 		1634D8841E91F0500021F6C1 /* StartupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D8831E91F0500021F6C1 /* StartupController.swift */; };
+		1658D3FE1EA1C9C00017E7FA /* FeedFilterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658D3FD1EA1C9C00017E7FA /* FeedFilterTableViewController.swift */; };
 		165D1D181E62797E0083322E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D171E62797E0083322E /* AppDelegate.swift */; };
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
@@ -73,6 +74,7 @@
 		1634D87C1E91E31B0021F6C1 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
 		1634D87F1E91E57B0021F6C1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		1634D8831E91F0500021F6C1 /* StartupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartupController.swift; sourceTree = "<group>"; };
+		1658D3FD1EA1C9C00017E7FA /* FeedFilterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedFilterTableViewController.swift; sourceTree = "<group>"; };
 		165D1D141E62797E0083322E /* Pray4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pray4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D171E62797E0083322E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		165D1D231E62797E0083322E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				16AD3D191E6BB609001DE3B5 /* PrayerRequest.swift */,
 				16BDE9551E9C6948005617F0 /* Prayers Model */,
 				16FE878D1E74EA6600281EBF /* Main.storyboard */,
+				1658D3FD1EA1C9C00017E7FA /* FeedFilterTableViewController.swift */,
 				1634D8821E91F02C0021F6C1 /* Tab Bar Startup */,
 				1634D8561E9091010021F6C1 /* Login Page */,
 				1634D8551E9090010021F6C1 /* Profile */,
@@ -489,6 +492,7 @@
 				16FE873D1E726B7000281EBF /* PrayerFeelingPickerController.swift in Sources */,
 				16FE885E1E7E5E4D00281EBF /* CalendarViewController.swift in Sources */,
 				165D1D681E65250F0083322E /* ProfileViewController.swift in Sources */,
+				1658D3FE1EA1C9C00017E7FA /* FeedFilterTableViewController.swift in Sources */,
 				165D1D181E62797E0083322E /* AppDelegate.swift in Sources */,
 				165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */,
 				16AD3D181E6BB371001DE3B5 /* PrayerFeedTableViewController.swift in Sources */,

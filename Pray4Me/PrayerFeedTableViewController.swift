@@ -8,21 +8,11 @@
 
 import UIKit
 
-class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelegate {
+class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelegate, FilterFeedChangedProtocol {
 
 	let noPrayersPrayer = PrayerRequest()
 	var prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
 	var refreshTableData: (() -> ())?
-
-	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, thePrayer: PrayerRequest) {
-		AppDelegate.appDelegate().prayerRequests.savePrayerToServer(prayerToBeSent: thePrayer) {
-			self.importAndRefreshTable() }
-		controller.dismiss(animated: true, completion: { _ in })
-	}
-
-	func requestDetailsDidCancel(_ controller: RequestDetailsTableViewController) {
-		controller.dismiss(animated: true, completion: { _ in })
-	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,29 +32,50 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 			}
 		}
 	}
-	@IBAction func reloadFeedData(_ sender: Any) {
-		self.importAndRefreshTable()
+
+	@IBAction func pullToReloadFeed(_ sender: UIRefreshControl) {
+		self.importAndRefreshTable(didPullToRefresh: sender)
 	}
 
-	func importAndRefreshTable() {
+	func importAndRefreshTable(didPullToRefresh refreshSender: UIRefreshControl? = nil) {
 		self.prayerRequestsSource = []
-		AppDelegate.appDelegate().prayerRequests.importPrayerFeed() { [weak self] in
-			DispatchQueue.main.async {
-				guard let `self` = self else { return }
-				self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
-				if self.prayerRequestsSource.isEmpty {
-					self.noPrayersPrayer.requestString = "No prayers available! Please check back later! :)"
-					self.noPrayersPrayer.userAvatar = nil
-					self.prayerRequestsSource = [self.noPrayersPrayer]
+		DispatchQueue.global(qos: .userInitiated).async {
+			// Do long running task here
+			// Bounce back to the main thread to update the UI
+			AppDelegate.appDelegate().prayerRequests.importPrayerFeed() { [weak self] in
+				DispatchQueue.main.async {
+					guard let `self` = self else { return }
+					self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+					self.tableView.reloadData()
+					if let pulledToRefresh = refreshSender {
+						pulledToRefresh.endRefreshing()
+					}
 				}
-				self.tableView.reloadData()
 			}
 		}
 	}
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+		if !prayerRequestsSource.isEmpty {
+			self.tableView.separatorStyle = .singleLine;
+			return 1;
+
+		} else {
+			// Display a message when the table is empty
+			let noPrayersMessageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+
+			noPrayersMessageLabel.text = "No prayers are currently available! Please pull down to refresh."
+			noPrayersMessageLabel.textColor = UIColor.black
+			noPrayersMessageLabel.numberOfLines = 0;
+			noPrayersMessageLabel.textAlignment = .center
+			noPrayersMessageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+			noPrayersMessageLabel.sizeToFit()
+
+			self.tableView.backgroundView = noPrayersMessageLabel;
+			self.tableView.separatorStyle = .none;
+			return 0
+		}
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -107,15 +118,37 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
 		
-		if (segue.identifier == "RequestDetailsSegue"){
+		if segue.identifier == "RequestDetailsSegue" {
 			let navigationController = segue.destination
 			let prayerDetailsViewController = navigationController.childViewControllers[0] as! RequestDetailsTableViewController
 			prayerDetailsViewController.delegateForSaveAndCancel = self
-			
+		} else if segue.identifier == "FilterFeedSegue" {
+			let navigationController = segue.destination
+			let prayerDetailsViewController = navigationController.childViewControllers[0] as! FeedFilterTableViewController
+			prayerDetailsViewController.delegateForFilteringFeed = self
 		}
     }
 
 	func deleteThePrayer(thePrayer: PrayerRequest) {
 		AppDelegate.appDelegate().prayerRequests.deletePrayerFromServer(prayerToBeDeleted: thePrayer)
+	}
+
+	// MARK: RequestDetailsDelegate
+
+	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, thePrayer: PrayerRequest) {
+		AppDelegate.appDelegate().prayerRequests.savePrayerToServer(prayerToBeSent: thePrayer) {
+			self.importAndRefreshTable() }
+		controller.dismiss(animated: true, completion: { _ in })
+	}
+
+	func requestDetailsDidCancel(_ controller: RequestDetailsTableViewController) {
+		controller.dismiss(animated: true, completion: { _ in })
+	}
+
+	// MARK: FilterFeedChangedProtocol
+
+	func filterAndReloadFeed(_ controller: FeedFilterTableViewController, filterToApply filterIndex: Int) {
+		// Filter the feed
+		controller.dismiss(animated: true)
 	}
 }

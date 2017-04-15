@@ -20,7 +20,7 @@ class PrayerFeelingPickerController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
+		self.clearsSelectionOnViewWillAppear = false
 		selectedIndex = (PrayerFeeling.feelings as Array).index(of: self.feelingChoice)
     }
 
