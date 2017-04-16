@@ -13,6 +13,10 @@ https://www.raywenderlich.com/129059/self-sizing-table-view-cells
 
 https://medium.com/@patrickhsanders/getting-started-guide-for-facebook-sdk-v4-8-0-with-swift-2-1-1-and-xcode-7-2-c05b1da11dad
 
+http://www.appcoda.com/pull-to-refresh-uitableview-empty/
+
+https://medium.com/ios-os-x-development/ios-tips-pull-to-refresh-in-less-than-30-seconds-ef884520f0df
+
 // Server Tutorials!
 
 https://www.raywenderlich.com/61078/write-simple-node-jsmongodb-web-service-ios-app
@@ -40,6 +44,14 @@ http://stackoverflow.com/questions/15850417/cocoa-autolayout-content-hugging-vs-
 http://stackoverflow.com/questions/11442442/get-user-profile-picture-by-id
 
 http://stackoverflow.com/questions/4139219/how-do-you-trigger-a-block-after-a-delay-like-performselectorwithobjectafter
+
+http://stackoverflow.com/questions/37305951/swift-optional-parameter-in-function
+
+http://stackoverflow.com/questions/28302019/getting-a-this-application-is-modifying-the-autolayout-engine-error
+
+http://stackoverflow.com/questions/6638955/facebook-ios-sdk-get-friends-list
+
+http://stackoverflow.com/questions/21775198/facebook-api-this-app-is-in-development-mode
 
 //Server help!
 
