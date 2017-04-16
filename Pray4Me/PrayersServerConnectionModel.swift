@@ -12,6 +12,13 @@ let kBaseURL = "http://ingrids-macbook-pro.local:3000/"
 let kPrayerRequests = "prayerRequests/"
 let kFiles = "files"
 
+// prayerRequests/global will be all global prayers
+// prayerRequests/friendsOnly will be all friends only prayers which will require a query search for friend IDs
+// prayerRequests/FBID/pivate will be all private prayers
+// prayerRequests/FBID/following will be all following prayers
+// prayerRequests/prayerID/comments will be for all comments on prayers
+
+
 class PrayersServerConnectionModel {
 
 	var prayers = [PrayerRequest]()
