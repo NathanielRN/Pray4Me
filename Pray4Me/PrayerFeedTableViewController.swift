@@ -58,7 +58,8 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 
     override func numberOfSections(in tableView: UITableView) -> Int {
 		if !prayerRequestsSource.isEmpty {
-			self.tableView.separatorStyle = .singleLine;
+			self.tableView.backgroundView = nil
+			self.tableView.separatorStyle = .singleLine
 			return 1;
 
 		} else {
@@ -72,7 +73,7 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 			noPrayersMessageLabel.font = UIFont(name: "Palatino-Italic", size: 20)
 			noPrayersMessageLabel.sizeToFit()
 
-			self.tableView.backgroundView = noPrayersMessageLabel;
+			self.tableView.backgroundView = noPrayersMessageLabel
 			self.tableView.separatorStyle = .none;
 			return 0
 		}
@@ -99,15 +100,25 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
     }
 
 	
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
+	// Override to support editing the table view.
+	override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		if editingStyle == .delete {
 			self.deleteThePrayer(thePrayer: self.prayerRequestsSource[indexPath.row])
 			self.prayerRequestsSource.remove(at: indexPath.row) // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade) // Delete the row on the table
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
+			if self.prayerRequestsSource.isEmpty {
+				let multipleindexes = NSMutableIndexSet()
+				multipleindexes.add(indexPath.section)
+				tableView.beginUpdates()
+				tableView.deleteRows(at: [indexPath], with: .fade)
+				tableView.deleteSections(multipleindexes as IndexSet, with: .fade)
+				tableView.endUpdates()
+				return
+			} else {
+				tableView.deleteRows(at: [indexPath], with: .fade) // Delete the row on the table
+			}
+		} else if editingStyle == .insert {
+			// Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+		}
 	}
 
 

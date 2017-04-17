@@ -8,7 +8,7 @@
 
 import Foundation
 
-let kBaseURL = "http://ingrids-macbook-pro.local:3000/"
+let kBaseURL = "https://pray-4-me.herokuapp.com/"
 let kPrayerRequests = "prayerRequests/"
 let kFiles = "files"
 
@@ -37,7 +37,12 @@ class PrayersServerConnectionModel {
 			(data, response, error) in
 			if error == nil {
 			let receivedArrayFromResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
-			self.parseAndAddPrayersToFeed(incomingArray: receivedArrayFromResponse as! [Dictionary<AnyHashable, Any>], dataRecivedCallback)
+			print(" From heroku we got this back: \(String(describing: receivedArrayFromResponse))")
+				if let unwrappedRecievedArray = receivedArrayFromResponse as? [Dictionary<AnyHashable, Any>] {
+					self.parseAndAddPrayersToFeed(incomingArray: unwrappedRecievedArray, dataRecivedCallback)
+				} else {
+					dataRecivedCallback?()
+				}
 			} else {
 				dataRecivedCallback?()
 			}
