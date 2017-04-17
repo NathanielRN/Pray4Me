@@ -23,6 +23,8 @@ https://www.raywenderlich.com/61078/write-simple-node-jsmongodb-web-service-ios-
 
 https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
 
+https://forum.freecodecamp.com/t/guide-for-using-mongodb-and-deploying-to-heroku/19347
+
 Online code solutions reference:
 
 http://stackoverflow.com/questions/24167073/how-to-transition-to-a-new-view-controller-with-code-only-using-swift
@@ -53,6 +55,10 @@ http://stackoverflow.com/questions/6638955/facebook-ios-sdk-get-friends-list
 
 http://stackoverflow.com/questions/21775198/facebook-api-this-app-is-in-development-mode
 
+http://stackoverflow.com/questions/999908/how-to-delete-the-last-row-of-a-section
+
+http://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git
+
 //Server help!
 
 https://forums.raywenderlich.com/t/how-to-write-a-simple-node-js-mongodb-web-service-for-an-ios-app/6759
@@ -72,3 +78,17 @@ https://en.wikipedia.org/wiki/LXC
 http://stackoverflow.com/questions/8731782/whats-a-repl-process-and-what-can-i-use-it-for
 
 http://stackoverflow.com/questions/6912584/how-to-get-get-query-string-variables-in-express-js-on-node-js?rq=1
+
+https://gist.github.com/naaman/1384970
+
+http://stackoverflow.com/questions/34631300/error-when-deploying-app-to-heroku
+
+http://stackoverflow.com/questions/13066532/how-to-uninstall-npm-modules-in-node-js
+
+https://devcenter.heroku.com/articles/mongolab
+
+http://mongodb.github.io/node-mongodb-native/2.2/api/Db.html
+
+http://stackoverflow.com/questions/31071275/mongodb-client-open-returns-undefined-in-not-a-function
+
+http://stackoverflow.com/questions/39030222/no-compatible-version-found-mongodb3-2-8 Really helped me realize the difference between mongoDatabase and mongoDriver!
