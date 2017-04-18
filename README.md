@@ -25,6 +25,10 @@ https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction
 
 https://forum.freecodecamp.com/t/guide-for-using-mongodb-and-deploying-to-heroku/19347
 
+https://forum.freecodecamp.com/t/storing-mongo-username-password-persistently-using-dotenv/50994
+
+https://elements.heroku.com/buttons/mongolab/hello-mongoose
+
 Online code solutions reference:
 
 http://stackoverflow.com/questions/24167073/how-to-transition-to-a-new-view-controller-with-code-only-using-swift
@@ -92,3 +96,7 @@ http://mongodb.github.io/node-mongodb-native/2.2/api/Db.html
 http://stackoverflow.com/questions/31071275/mongodb-client-open-returns-undefined-in-not-a-function
 
 http://stackoverflow.com/questions/39030222/no-compatible-version-found-mongodb3-2-8 Really helped me realize the difference between mongoDatabase and mongoDriver!
+
+http://stackoverflow.com/questions/35813584/invalid-schema-expected-mongodb
+
+https://gist.github.com/naaman/1384970 This for delete heroku app which I've had to do quite a bit in terms of restarting!
