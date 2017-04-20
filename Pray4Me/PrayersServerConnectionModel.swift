@@ -15,7 +15,7 @@ let pFiles = "files"
 // prayerRequests/global will be all global prayers
 // prayerRequests/friendsOnly will be all friends only prayers which will require a query search for friend IDs
 // prayerRequests/FBID/pivate will be all private prayers
-// prayerRequests/FBID/following will be all following prayers... right now it is prayerRequests/a;sdkjfhlkasdjfh/FBID lol.
+// prayerRequests/FBID/following will be all following prayers... right now it is prayerRequests/a;sdkjfhlkasdjfh/FBID lol. CATHY IS SHORT
 // prayerRequests/prayerID/comments will be for all comments on prayers
 
 
