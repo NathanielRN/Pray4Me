@@ -144,19 +144,105 @@
         <!--Profile Details-->
         <scene sceneID="dZ9-tu-wOR">
             <objects>
-                <tableViewController title="Profile Details" id="2M6-vQ-ud1" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vFd-0j-uZ1">
+                <tableViewController title="Profile Details" id="2M6-vQ-ud1" customClass="ProfileTableViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="vFd-0j-uZ1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tKn-O7-4Y5">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subscribedPrayer" id="tKn-O7-4Y5" customClass="SubscribedPrayerTableViewCell" customModule="Pray4Me" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tKn-O7-4Y5" id="y03-jd-Kun">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="osR-CU-sGk">
+                                            <rect key="frame" x="8" y="0.0" width="39" height="39"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="39" id="1gr-Vf-I64"/>
+                                                <constraint firstAttribute="height" constant="39" id="H0L-iN-moZ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0HB-KX-fOc" userLabel="Name &amp; Feeling">
+                                            <rect key="frame" x="65" y="0.0" width="204" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRE-ll-GbE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Feelings Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wQy-0E-toR">
+                                                    <rect key="frame" x="94" y="0.0" width="110" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XRE-ll-GbE" firstAttribute="leading" secondItem="0HB-KX-fOc" secondAttribute="leading" id="2gX-W7-z6p"/>
+                                                <constraint firstAttribute="bottom" secondItem="XRE-ll-GbE" secondAttribute="bottom" id="8vz-rN-PUY"/>
+                                                <constraint firstItem="XRE-ll-GbE" firstAttribute="top" secondItem="0HB-KX-fOc" secondAttribute="top" id="dy5-gG-cHt"/>
+                                            </constraints>
+                                        </stackView>
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prayer Request" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-zP-uLU">
+                                            <rect key="frame" x="65" y="20.5" width="86" height="14.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5ic-ex-tIb" userLabel="Prayer Buttons">
+                                            <rect key="frame" x="65" y="37" width="250" height="27"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMV-bJ-M9W">
+                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="zdT-ui-BgB"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Unsubscribe"/>
+                                                    <connections>
+                                                        <action selector="subscribeToPrayer:" destination="hGF-Kn-Ijw" eventType="touchUpInside" id="CYE-B0-YXc"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQR-dR-Vjo">
+                                                    <rect key="frame" x="111.5" y="0.0" width="27" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="iAH-fg-zKP"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Reaction"/>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-6j-Bld">
+                                                    <rect key="frame" x="223" y="0.0" width="27" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="27" id="9l0-1s-upd"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="Comment"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="250" id="AhR-aT-F43"/>
+                                                <constraint firstAttribute="height" constant="27" id="JrV-GZ-TNj"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="osR-CU-sGk" firstAttribute="top" secondItem="0HB-KX-fOc" secondAttribute="top" id="9bR-Ca-dng"/>
+                                        <constraint firstItem="osR-CU-sGk" firstAttribute="leading" secondItem="y03-jd-Kun" secondAttribute="leadingMargin" id="RHo-1I-7n4"/>
+                                        <constraint firstItem="kYy-zP-uLU" firstAttribute="leading" secondItem="osR-CU-sGk" secondAttribute="trailing" constant="18" id="Tgv-nx-8Lj"/>
+                                        <constraint firstItem="0HB-KX-fOc" firstAttribute="top" secondItem="y03-jd-Kun" secondAttribute="topMargin" constant="-8" id="YdM-ed-lsw"/>
+                                        <constraint firstItem="kYy-zP-uLU" firstAttribute="top" secondItem="0HB-KX-fOc" secondAttribute="bottom" constant="0.5" id="dge-m8-U0D"/>
+                                        <constraint firstItem="5ic-ex-tIb" firstAttribute="leading" secondItem="kYy-zP-uLU" secondAttribute="leading" id="iW3-EU-B2T"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5ic-ex-tIb" secondAttribute="bottom" constant="-2.5" id="lXq-Wj-Kf4"/>
+                                        <constraint firstItem="5ic-ex-tIb" firstAttribute="top" secondItem="kYy-zP-uLU" secondAttribute="bottom" constant="2" id="rCf-HL-wv6"/>
+                                        <constraint firstItem="0HB-KX-fOc" firstAttribute="leading" secondItem="osR-CU-sGk" secondAttribute="trailing" constant="18" id="xyy-d1-WWf"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="prayerRequestField" destination="kYy-zP-uLU" id="vQx-LK-5P7"/>
+                                    <outlet property="userAvatarField" destination="osR-CU-sGk" id="mLP-X0-QWc"/>
+                                    <outlet property="userNameField" destination="XRE-ll-GbE" id="UTd-gl-99E"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -246,6 +332,9 @@
                                                         <constraint firstAttribute="width" constant="27" id="EfG-cL-lQG"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" image="Subscribe"/>
+                                                    <connections>
+                                                        <action selector="subscribeToPrayer:" destination="hGF-Kn-Ijw" eventType="touchUpInside" id="1qH-DD-IfV"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0gT-HG-QXt">
                                                     <rect key="frame" x="105" y="0.0" width="27" height="27"/>
@@ -822,6 +911,7 @@
         <image name="Comment" width="512" height="512"/>
         <image name="Reaction" width="512" height="512"/>
         <image name="Subscribe" width="512" height="512"/>
+        <image name="Unsubscribe" width="512" height="512"/>
         <image name="calender" width="30" height="30"/>
         <image name="categories" width="30" height="30"/>
         <image name="newsfeed" width="30" height="30"/>

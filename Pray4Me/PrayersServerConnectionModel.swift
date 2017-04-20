@@ -8,24 +8,24 @@
 
 import Foundation
 
-let kBaseURL = "https://pray-4-me.herokuapp.com/"
-let kPrayerRequests = "prayerRequests/"
-let kFiles = "files"
+let pBaseURL = "http://ingrids-macbook-pro.local:5000/" //"https://pray-4-me.herokuapp.com/"
+let pPrayerRequests = "prayerRequests/"
+let pFiles = "files"
 
 // prayerRequests/global will be all global prayers
 // prayerRequests/friendsOnly will be all friends only prayers which will require a query search for friend IDs
 // prayerRequests/FBID/pivate will be all private prayers
-// prayerRequests/FBID/following will be all following prayers
+// prayerRequests/FBID/following will be all following prayers... right now it is prayerRequests/a;sdkjfhlkasdjfh/FBID lol.
 // prayerRequests/prayerID/comments will be for all comments on prayers
 
 
 class PrayersServerConnectionModel {
 
-	var prayers = [PrayerRequest]()
+	// MARK: Strictly Server requests
 
 	func importPrayerFeed(_ dataRecivedCallback: (() -> ())? = nil) {
 		self.prayers.removeAll()
-		let urlForRequestFetching = kBaseURL + kPrayerRequests
+		let urlForRequestFetching = pBaseURL + pPrayerRequests
 		var request = URLRequest(url: URL(string: urlForRequestFetching)!)
 		request.httpMethod = "GET"
 		request.addValue("application/json", forHTTPHeaderField: "Accept")
@@ -53,17 +53,9 @@ class PrayersServerConnectionModel {
 
 	}
 
-	func parseAndAddPrayersToFeed(incomingArray: [Dictionary<AnyHashable, Any>], _ readyToPopulateCallback: (() -> ())? = nil) {
-		for aPrayer in incomingArray {
-			let prayerCandidate = PrayerRequest(dictionaryWithInfo: aPrayer)
-			self.prayers.append(prayerCandidate)
-		}
-		readyToPopulateCallback?()
-	}
-
 	func savePrayerToServer(prayerToBeSent: PrayerRequest, _ dataSavedCallback: (() -> ())? = nil) {
 
-		let prayerRequestsPath = kBaseURL + kPrayerRequests
+		let prayerRequestsPath = pBaseURL + pPrayerRequests
 		let urlWherePrayerWillBeSaved = URL(string: prayerRequestsPath)
 		var request = URLRequest(url: urlWherePrayerWillBeSaved!)
 		request.httpMethod = "POST"
@@ -92,7 +84,7 @@ class PrayersServerConnectionModel {
 	}
 
 	func deletePrayerFromServer(prayerToBeDeleted: PrayerRequest) {
-		let prayerRequestsPath = kBaseURL + kPrayerRequests + prayerToBeDeleted.prayerServerID!
+		let prayerRequestsPath = pBaseURL + pPrayerRequests + prayerToBeDeleted.prayerServerID!
 		var requestToDelete = URLRequest(url: URL(string: prayerRequestsPath)!)
 		requestToDelete.httpMethod = "DELETE"
 
@@ -115,11 +107,86 @@ class PrayersServerConnectionModel {
 
 	}
 
-	func saveNewImageFirst() {
+	//TODO: Integrate posting pictures and storing them on "files" path
+
+	func subscribeToPrayer(prayerToSubscribeTo: PrayerRequest, _ dataSavedCallback: (() -> ())? = nil) {
+		let subscribeToPath = pBaseURL + pPrayerRequests + "mySubscriptions/" + FacebookUser.sharedInstanceOfMe.userID!
+		print(" path it here \(subscribeToPath)")
+		let urlWherePrayersYouSubscribeToAre = URL(string: subscribeToPath)
+		var requestToSubscribe = URLRequest(url: urlWherePrayersYouSubscribeToAre!)
+		requestToSubscribe.httpMethod = "POST"
+
+		let prayerBodyAsJSON = try? JSONSerialization.data(withJSONObject: prayerToSubscribeTo.convertToDictionary(), options: JSONSerialization.WritingOptions(rawValue: 0))
+		print(" HELLO \(prayerBodyAsJSON)")
+		requestToSubscribe.httpBody = prayerBodyAsJSON
+
+		requestToSubscribe.addValue("application/json", forHTTPHeaderField: "Content-type")
+
+		let configurationForUploadToSubscribe = URLSessionConfiguration.default
+		let sessionToSubscribe = URLSession(configuration: configurationForUploadToSubscribe)
+
+		let subscribeTask = sessionToSubscribe.dataTask(with: requestToSubscribe) { data, responseFromServer, error in
+			if error == nil {
+				let successfulUploadResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+				print("No problem here! :) \(successfulUploadResponseArray)")
+				self.parseAndAddPrayersToSubscribedFeed(incomingArray: [successfulUploadResponseArray as! Dictionary<AnyHashable,Any>], dataSavedCallback)
+			} else {
+				dataSavedCallback?()
+			}
+		}
+
+		subscribeTask.resume()
 
 	}
 
-	func addPrayer() {
+	func importSubscribedPrayers(_ dataRecivedCallback: (() -> ())? = nil) {
+		let stringToGetSubscribedPrayers = pBaseURL + pPrayerRequests + "mySubscriptions/" + FacebookUser.sharedInstanceOfMe.userID!
+		let urlGetSubscribedPrayers = URL(string: stringToGetSubscribedPrayers)
+		var requestForSubscribedPrayers = URLRequest(url: urlGetSubscribedPrayers!)
+		requestForSubscribedPrayers.httpMethod = "GET"
+		requestForSubscribedPrayers.addValue("application/json", forHTTPHeaderField: "Accept")
 
+		let configurationForSession = URLSessionConfiguration.default
+		let sessionForSubscriptionImport = URLSession(configuration: configurationForSession)
+
+		let importSubscribedPrayersDataTask = sessionForSubscriptionImport.dataTask(with: requestForSubscribedPrayers) { data, responseArray, error in
+			if error == nil {
+				let responseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+				print("Subscibed to: \(String(describing: responseArray))")
+				if let unwrappedRecievedArray = responseArray as? [Dictionary<AnyHashable, Any>] {
+					self.parseAndAddPrayersToSubscribedFeed(incomingArray: unwrappedRecievedArray, dataRecivedCallback)
+				} else {
+					dataRecivedCallback?()
+				}
+			} else {
+				dataRecivedCallback?()
+			}
+		}
+
+		importSubscribedPrayersDataTask.resume()
+	}
+
+	// MARK: Handle server response
+
+	var prayers = [PrayerRequest]()
+
+	func parseAndAddPrayersToFeed(incomingArray: [Dictionary<AnyHashable, Any>], _ readyToPopulateCallback: (() -> ())? = nil) {
+		self.prayers = []
+		for aPrayer in incomingArray {
+			let prayerCandidate = PrayerRequest(dictionaryWithInfo: aPrayer)
+			self.prayers.append(prayerCandidate)
+		}
+		readyToPopulateCallback?()
+	}
+
+	var subscribedPrayers = [PrayerRequest]()
+
+	func parseAndAddPrayersToSubscribedFeed(incomingArray: [Dictionary<AnyHashable, Any>], _ readyToPopulateCallback: (() -> ())? = nil) {
+		self.subscribedPrayers = []
+		for aPrayer in incomingArray {
+			let prayerCandidate = PrayerRequest(dictionaryWithInfo: aPrayer)
+			self.subscribedPrayers.append(prayerCandidate)
+		}
+		readyToPopulateCallback?()
 	}
 }

@@ -37,6 +37,25 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		self.importAndRefreshTable(didPullToRefresh: sender)
 	}
 
+	@IBAction func subscribeToPrayer(_ sender: Any) {
+
+		var superView = (sender as AnyObject).superview
+
+		while !(type(of: (superView!)!) == PrayerRequestCell.self)
+		{
+			NSLog("Lol I'm stuck \(type(of: (superView!)!))")
+			superView = (superView as AnyObject).superview
+		}
+
+		let cell = superView as! UITableViewCell
+		let indexPath = self.tableView.indexPath(for: cell)! as NSIndexPath
+		let prayerToSubscribeTo = self.prayerRequestsSource[indexPath.row]
+		AppDelegate.appDelegate().prayerRequests.subscribeToPrayer(prayerToSubscribeTo: prayerToSubscribeTo, { [weak self] in
+			guard let `self` = self else {return}
+			self.tableView.reloadData()})
+	}
+
+
 	func importAndRefreshTable(didPullToRefresh refreshSender: UIRefreshControl? = nil) {
 		self.prayerRequestsSource = []
 		DispatchQueue.global(qos: .userInitiated).async {
