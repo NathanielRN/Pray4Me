@@ -117,7 +117,7 @@ class PrayersServerConnectionModel {
 		requestToSubscribe.httpMethod = "POST"
 
 		let prayerBodyAsJSON = try? JSONSerialization.data(withJSONObject: prayerToSubscribeTo.convertToDictionary(), options: JSONSerialization.WritingOptions(rawValue: 0))
-		print(" HELLO \(prayerBodyAsJSON)")
+		print(" HELLO \(String(describing: prayerBodyAsJSON))")
 		requestToSubscribe.httpBody = prayerBodyAsJSON
 
 		requestToSubscribe.addValue("application/json", forHTTPHeaderField: "Content-type")
@@ -128,7 +128,7 @@ class PrayersServerConnectionModel {
 		let subscribeTask = sessionToSubscribe.dataTask(with: requestToSubscribe) { data, responseFromServer, error in
 			if error == nil {
 				let successfulUploadResponseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
-				print("No problem here! :) \(successfulUploadResponseArray)")
+				print("No problem here! :) \(String(describing: successfulUploadResponseArray))")
 				self.parseAndAddPrayersToSubscribedFeed(incomingArray: [successfulUploadResponseArray as! Dictionary<AnyHashable,Any>], dataSavedCallback)
 			} else {
 				dataSavedCallback?()
