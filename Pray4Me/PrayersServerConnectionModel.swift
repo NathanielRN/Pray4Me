@@ -23,6 +23,8 @@ class PrayersServerConnectionModel {
 
 	// MARK: Strictly Server requests
 
+	// MARK: Main Prayer Feed
+
 	func importPrayerFeed(_ dataRecivedCallback: (() -> ())? = nil) {
 		self.prayers.removeAll()
 		let urlForRequestFetching = pBaseURL + pPrayerRequests
@@ -107,10 +109,12 @@ class PrayersServerConnectionModel {
 
 	}
 
+	//MARK: Subscriptions Requests
+
 	//TODO: Integrate posting pictures and storing them on "files" path
 
 	func subscribeToPrayer(prayerToSubscribeTo: PrayerRequest, _ dataSavedCallback: (() -> ())? = nil) {
-		let subscribeToPath = pBaseURL + pPrayerRequests + "mySubscriptions/" + FacebookUser.sharedInstanceOfMe.userID!
+		let subscribeToPath = pBaseURL + pPrayerRequests + FacebookUser.sharedInstanceOfMe.userID! + "/subscribedPrayers"
 		print(" path it here \(subscribeToPath)")
 		let urlWherePrayersYouSubscribeToAre = URL(string: subscribeToPath)
 		var requestToSubscribe = URLRequest(url: urlWherePrayersYouSubscribeToAre!)
@@ -140,7 +144,7 @@ class PrayersServerConnectionModel {
 	}
 
 	func importSubscribedPrayers(_ dataRecivedCallback: (() -> ())? = nil) {
-		let stringToGetSubscribedPrayers = pBaseURL + pPrayerRequests + "mySubscriptions/" + FacebookUser.sharedInstanceOfMe.userID!
+		let stringToGetSubscribedPrayers = pBaseURL + pPrayerRequests + FacebookUser.sharedInstanceOfMe.userID! + "/subscribedPrayers"
 		let urlGetSubscribedPrayers = URL(string: stringToGetSubscribedPrayers)
 		var requestForSubscribedPrayers = URLRequest(url: urlGetSubscribedPrayers!)
 		requestForSubscribedPrayers.httpMethod = "GET"
@@ -164,6 +168,26 @@ class PrayersServerConnectionModel {
 		}
 
 		importSubscribedPrayersDataTask.resume()
+	}
+
+	func unsubscribeFromPrayer(unsubscribeFrom thisPrayer: PrayerRequest, _ dataRecivedCallback: (() -> ())? = nil) {
+		let stringWhereSubscribedPrayersAre = pBaseURL + pPrayerRequests + FacebookUser.sharedInstanceOfMe.userID! + "/subscribedPrayers" + thisPrayer.prayerServerID!
+		let urlForDelete = URL(string: stringWhereSubscribedPrayersAre)
+		var requestForUnsubscribe = URLRequest(url: urlForDelete!)
+		requestForUnsubscribe.httpMethod = "DELETE"
+		requestForUnsubscribe.addValue("application/json", forHTTPHeaderField: "Content-type")
+
+		let configurationForSession = URLSessionConfiguration.default
+		let sessionForUnsubscribing = URLSession(configuration: configurationForSession)
+
+		let unsubscriptionTask = sessionForUnsubscribing.dataTask(with: requestForUnsubscribe) { data, response, error in
+			if error == nil {
+				let responseArray = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+				print("Successfully unsubscribed from prayer with ID: \(String(describing: thisPrayer.prayerServerID)) and response \(String(describing: responseArray))")
+			}
+		}
+
+		unsubscriptionTask.resume()
 	}
 
 	// MARK: Handle server response

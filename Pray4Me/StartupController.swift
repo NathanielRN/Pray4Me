@@ -34,7 +34,7 @@ class StartupController: UITabBarController {
 		let tabBarController: UITabBarController? = (self as UITabBarController)
 		let navigationController: UINavigationController? = tabBarController?.viewControllers?[0] as! UINavigationController?
 		let prayerFeedTableViewController: PrayerFeedTableViewController? = navigationController?.viewControllers[0] as! PrayerFeedTableViewController?
-		prayerFeedTableViewController?.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+		prayerFeedTableViewController?.prayerRequestsSource = AppDelegate.appDelegate().serverConnectionInstance.prayers
 
     }
 

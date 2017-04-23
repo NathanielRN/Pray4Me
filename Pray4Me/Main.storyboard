@@ -204,6 +204,7 @@
                                                     <state key="normal" title="Button" image="Unsubscribe"/>
                                                     <connections>
                                                         <action selector="subscribeToPrayer:" destination="hGF-Kn-Ijw" eventType="touchUpInside" id="CYE-B0-YXc"/>
+                                                        <action selector="unsubscribeFromPrayer:" destination="2M6-vQ-ud1" eventType="touchUpInside" id="R3Z-0V-WPd"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQR-dR-Vjo">
@@ -967,7 +968,7 @@
         <scene sceneID="xWN-hA-PaU">
             <objects>
                 <collectionViewController title="Categories" id="AUq-Vn-I1A" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="DEu-Vg-ZZH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DEu-Vg-ZZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

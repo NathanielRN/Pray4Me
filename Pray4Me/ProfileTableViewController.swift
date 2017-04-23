@@ -17,12 +17,6 @@ class ProfileTableViewController: UITableViewController {
 		tableView.rowHeight = UITableViewAutomaticDimension
 		tableView.estimatedRowHeight = 100
 		self.importSubscribedPrayers()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -32,10 +26,10 @@ class ProfileTableViewController: UITableViewController {
 	func importSubscribedPrayers() {
 		self.prayersYouSubscribeTo = []
 		DispatchQueue.global(qos: .userInitiated).async {
-			AppDelegate.appDelegate().prayerRequests.importSubscribedPrayers() {
+			AppDelegate.appDelegate().serverConnectionInstance.importSubscribedPrayers() {
 				DispatchQueue.main.async { [weak self] in
 					guard let `self` = self else { return }
-					self.prayersYouSubscribeTo = AppDelegate.appDelegate().prayerRequests.subscribedPrayers
+					self.prayersYouSubscribeTo = AppDelegate.appDelegate().serverConnectionInstance.subscribedPrayers
 					self.tableView.reloadData()
 				}
 
@@ -43,6 +37,30 @@ class ProfileTableViewController: UITableViewController {
 		}
 	}
 
+	@IBAction func unsubscribeFromPrayer(_ sender: Any) {
+		var superView = (sender as AnyObject).superview
+
+		while (type(of: (superView!)!)) != SubscribedPrayerTableViewCell.self {
+			superView = (superView as AnyObject).superview
+		}
+
+		let tappedCell = superView as! UITableViewCell
+		let indexPath = self.tableView.indexPath(for: tappedCell)! as IndexPath
+		let prayerToUnsubscribeFrom = self.prayersYouSubscribeTo[indexPath.row]
+		self.removePrayerFromModelSource(unsubscribeFrom: prayerToUnsubscribeFrom)
+		self.prayersYouSubscribeTo.remove(at: indexPath.row) // Delete the row from the data source
+		if self.prayersYouSubscribeTo.isEmpty {
+			let multipleindexes = NSMutableIndexSet()
+			multipleindexes.add(indexPath.section)
+			tableView.beginUpdates()
+			tableView.deleteRows(at: [indexPath], with: .fade)
+			tableView.deleteSections(multipleindexes as IndexSet, with: .fade)
+			tableView.endUpdates()
+			return
+		} else {
+			tableView.deleteRows(at: [indexPath], with: .fade) // Delete the row on the table
+		}
+	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -52,7 +70,26 @@ class ProfileTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+		if !prayersYouSubscribeTo.isEmpty {
+			self.tableView.backgroundView = nil
+			self.tableView.separatorStyle = .singleLine
+			return 1;
+
+		} else {
+			// Display a message when the table is empty
+			let noSubscriptionsYetLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.bounds.size.width, height: self.view.bounds.size.height))
+
+			noSubscriptionsYetLabel.text = "You've finished praying for all you subscriptions! Go to your feed to subscribe to more prayers!."
+			noSubscriptionsYetLabel.textColor = UIColor.black
+			noSubscriptionsYetLabel.numberOfLines = 0;
+			noSubscriptionsYetLabel.textAlignment = .center
+			noSubscriptionsYetLabel.font = UIFont(name: "Palatino-Italic", size: 20)
+			noSubscriptionsYetLabel.sizeToFit()
+
+			self.tableView.backgroundView = noSubscriptionsYetLabel
+			self.tableView.separatorStyle = .none;
+			return 0
+		}
     }
 
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,33 +124,6 @@ class ProfileTableViewController: UITableViewController {
     */
 
     /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -122,5 +132,9 @@ class ProfileTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
+	func removePrayerFromModelSource(unsubscribeFrom prayerToUnsubscribeFrom: PrayerRequest) {
+		AppDelegate.appDelegate().serverConnectionInstance.unsubscribeFromPrayer(unsubscribeFrom: prayerToUnsubscribeFrom)
+	}
 
 }

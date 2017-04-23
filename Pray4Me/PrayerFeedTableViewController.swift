@@ -11,7 +11,7 @@ import UIKit
 class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelegate, FilterFeedChangedProtocol {
 
 	let noPrayersPrayer = PrayerRequest()
-	var prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+	var prayerRequestsSource = AppDelegate.appDelegate().serverConnectionInstance.prayers
 	var refreshTableData: (() -> ())?
 
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 
 		var superView = (sender as AnyObject).superview
 
-		while !(type(of: (superView!)!) == PrayerRequestCell.self)
+		while type(of: (superView!)!) != PrayerRequestCell.self
 		{
 			NSLog("Lol I'm stuck \(type(of: (superView!)!))")
 			superView = (superView as AnyObject).superview
@@ -50,9 +50,10 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		let cell = superView as! UITableViewCell
 		let indexPath = self.tableView.indexPath(for: cell)! as NSIndexPath
 		let prayerToSubscribeTo = self.prayerRequestsSource[indexPath.row]
-		AppDelegate.appDelegate().prayerRequests.subscribeToPrayer(prayerToSubscribeTo: prayerToSubscribeTo, { [weak self] in
+		AppDelegate.appDelegate().serverConnectionInstance.subscribeToPrayer(prayerToSubscribeTo: prayerToSubscribeTo) { [weak self] in
 			guard let `self` = self else {return}
-			self.tableView.reloadData()})
+			self.tableView.reloadData()
+		}
 	}
 
 
@@ -61,10 +62,10 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
 		DispatchQueue.global(qos: .userInitiated).async {
 			// Do long running task here
 			// Bounce back to the main thread to update the UI
-			AppDelegate.appDelegate().prayerRequests.importPrayerFeed() { [weak self] in
+			AppDelegate.appDelegate().serverConnectionInstance.importPrayerFeed() { [weak self] in
 				DispatchQueue.main.async {
 					guard let `self` = self else { return }
-					self.prayerRequestsSource = AppDelegate.appDelegate().prayerRequests.prayers
+					self.prayerRequestsSource = AppDelegate.appDelegate().serverConnectionInstance.prayers
 					self.tableView.reloadData()
 					if let pulledToRefresh = refreshSender {
 						pulledToRefresh.endRefreshing()
@@ -160,13 +161,13 @@ class PrayerFeedTableViewController: UITableViewController, RequestDetailsDelega
     }
 
 	func deleteThePrayer(thePrayer: PrayerRequest) {
-		AppDelegate.appDelegate().prayerRequests.deletePrayerFromServer(prayerToBeDeleted: thePrayer)
+		AppDelegate.appDelegate().serverConnectionInstance.deletePrayerFromServer(prayerToBeDeleted: thePrayer)
 	}
 
 	// MARK: RequestDetailsDelegate
 
 	func requestDetailsDidSubmit(_ controller: RequestDetailsTableViewController, thePrayer: PrayerRequest) {
-		AppDelegate.appDelegate().prayerRequests.savePrayerToServer(prayerToBeSent: thePrayer) {
+		AppDelegate.appDelegate().serverConnectionInstance.savePrayerToServer(prayerToBeSent: thePrayer) {
 			self.importAndRefreshTable() }
 		controller.dismiss(animated: true, completion: { _ in })
 	}

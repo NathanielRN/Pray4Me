@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	var prayerRequests = PrayersServerConnectionModel()
+	var serverConnectionInstance = PrayersServerConnectionModel()
 
 	class func appDelegate() -> AppDelegate {
 		return UIApplication.shared.delegate as! AppDelegate
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 		FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
-		self.prayerRequests.importPrayerFeed()
+		self.serverConnectionInstance.importPrayerFeed()
 		return true
 	}
 
