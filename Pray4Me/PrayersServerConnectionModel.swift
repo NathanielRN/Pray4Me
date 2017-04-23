@@ -18,7 +18,6 @@ let pFiles = "files"
 // prayerRequests/FBID/following will be all following prayers... right now it is prayerRequests/a;sdkjfhlkasdjfh/FBID lol. CATHY IS SHORT
 // prayerRequests/prayerID/comments will be for all comments on prayers
 
-
 class PrayersServerConnectionModel {
 
 	// MARK: Strictly Server requests
@@ -100,8 +99,8 @@ class PrayersServerConnectionModel {
 
 		let deleteTask = sessionToDelete.dataTask(with: requestToDelete) { (data, responseFromServer, error) in
 			if error == nil {
-			let arrayResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
-			print("This after we delete: \(String(describing: arrayResponse)) with response \(String(describing: responseFromServer))")
+				let arrayResponse = try? JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions(rawValue: 0))
+				print("This after we delete: \(String(describing: arrayResponse)) with response \(String(describing: responseFromServer))")
 			}
 		}
 
@@ -171,10 +170,14 @@ class PrayersServerConnectionModel {
 	}
 
 	func unsubscribeFromPrayer(unsubscribeFrom thisPrayer: PrayerRequest, _ dataRecivedCallback: (() -> ())? = nil) {
-		let stringWhereSubscribedPrayersAre = pBaseURL + pPrayerRequests + FacebookUser.sharedInstanceOfMe.userID! + "/subscribedPrayers" + thisPrayer.prayerServerID!
+		let stringWhereSubscribedPrayersAre = pBaseURL + pPrayerRequests + FacebookUser.sharedInstanceOfMe.userID! + "/subscribedPrayers/" + thisPrayer.prayerServerID!
 		let urlForDelete = URL(string: stringWhereSubscribedPrayersAre)
 		var requestForUnsubscribe = URLRequest(url: urlForDelete!)
 		requestForUnsubscribe.httpMethod = "DELETE"
+
+		let prayerToUnsubscribeFromAsJson = try? JSONSerialization.data(withJSONObject: thisPrayer.convertToDictionary(), options: JSONSerialization.WritingOptions(rawValue: 0))
+		requestForUnsubscribe.httpBody = prayerToUnsubscribeFromAsJson
+
 		requestForUnsubscribe.addValue("application/json", forHTTPHeaderField: "Content-type")
 
 		let configurationForSession = URLSessionConfiguration.default

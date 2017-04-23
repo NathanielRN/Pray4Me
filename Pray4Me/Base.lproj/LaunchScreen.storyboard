@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,40 +21,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UHz-eb-evD">
-                                <rect key="frame" x="16" y="20" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U1p-6m-JSd">
-                                <rect key="frame" x="163" y="318" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GrS-B2-IPG">
-                                <rect key="frame" x="310" y="628" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vEk-C7-4Kg">
-                                <rect key="frame" x="310" y="20" width="51" height="31"/>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g96-k5-CAj">
-                                <rect key="frame" x="16" y="628" width="51" height="31"/>
-                            </switch>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OgC-oU-mkM">
+                                <rect key="frame" x="37" y="243" width="301" height="181.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pray4Me" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgK-aU-22Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="301" height="86"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="72"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🙏" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugP-LQ-Iga">
+                                        <rect key="frame" x="107.5" y="86" width="86" height="95.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="UHz-eb-evD" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="2iy-JA-lXs"/>
-                            <constraint firstItem="U1p-6m-JSd" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="4K2-7R-uC5"/>
-                            <constraint firstItem="GrS-B2-IPG" firstAttribute="leading" secondItem="vEk-C7-4Kg" secondAttribute="leading" id="9iE-Qa-etX"/>
-                            <constraint firstItem="UHz-eb-evD" firstAttribute="top" secondItem="vEk-C7-4Kg" secondAttribute="top" id="Ggm-6H-eTw"/>
-                            <constraint firstItem="UHz-eb-evD" firstAttribute="leading" secondItem="g96-k5-CAj" secondAttribute="leading" id="MTJ-2w-por"/>
-                            <constraint firstItem="GrS-B2-IPG" firstAttribute="top" secondItem="g96-k5-CAj" secondAttribute="top" id="McQ-QA-eLj"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g96-k5-CAj" secondAttribute="bottom" constant="8" symbolic="YES" id="Vhk-XC-1Xb"/>
-                            <constraint firstItem="UHz-eb-evD" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="oyY-7W-kQl"/>
-                            <constraint firstItem="vEk-C7-4Kg" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="u29-Fp-Ef3"/>
-                            <constraint firstItem="U1p-6m-JSd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="yqJ-8r-NYe"/>
+                            <constraint firstItem="OgC-oU-mkM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="sgu-cK-57X"/>
+                            <constraint firstItem="OgC-oU-mkM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="vo6-CG-TDx"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
 </document>

@@ -16,9 +16,10 @@
             <objects>
                 <navigationController id="CZO-3S-BzK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="jeM-Bq-1FT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N6y-0E-NKh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="N6y-0E-NKh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="uFK-n1-bCE" kind="relationship" relationship="rootViewController" id="QQ4-nH-Yc1"/>
@@ -263,9 +264,10 @@
             <objects>
                 <navigationController id="R0a-Zn-fG2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="f7Q-rE-wGV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cet-B8-VnN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cet-B8-VnN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2M6-vQ-ud1" kind="relationship" relationship="rootViewController" id="ds7-tN-v57"/>
@@ -279,12 +281,13 @@
         <scene sceneID="SJB-a3-atr">
             <objects>
                 <tableViewController title="Prayer Feed" id="hGF-Kn-Ijw" customClass="PrayerFeedTableViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d4T-A6-AdA">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" alpha="0.75" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d4T-A6-AdA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PrayerRequestCell" rowHeight="79" id="mQn-dC-tbW" customClass="PrayerRequestCell" customModule="Pray4Me" customModuleProvider="target">
+                            <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PrayerRequestCell" rowHeight="79" id="mQn-dC-tbW" customClass="PrayerRequestCell" customModule="Pray4Me" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mQn-dC-tbW" id="82P-Lw-jWU">
@@ -374,6 +377,8 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="NgO-z8-dgB" secondAttribute="bottom" id="vB6-9N-KTJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="feelingLabel" destination="Bzg-tG-6eL" id="nZn-gB-pRl"/>
                                     <outlet property="requestLabel" destination="aEE-Md-IiH" id="hu4-Z7-1tq"/>
@@ -646,9 +651,10 @@
             <objects>
                 <navigationController id="hOf-gJ-xGl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Prayer Feed" image="newsfeed" selectedImage="newsfeed" id="FYp-jk-9wK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qOu-S4-CbF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qOu-S4-CbF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="hGF-Kn-Ijw" kind="relationship" relationship="rootViewController" id="kfo-qb-lJ2"/>
@@ -690,7 +696,7 @@
         <scene sceneID="p0P-Lp-Kzt">
             <objects>
                 <tableViewController title="Profile Settings" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="currentContext" id="95K-pl-Jfj" customClass="SettingsTableViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gqr-Xi-APv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gqr-Xi-APv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -725,11 +731,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you praying about?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7du-bs-vqV">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What are you praying about?" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="7du-bs-vqV">
                                                     <rect key="frame" x="96" y="55.5" width="271" height="32"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -891,9 +897,10 @@
             <objects>
                 <navigationController id="YmN-rh-dpv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="edc-hc-mHE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Yi-zK-aOr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7Yi-zK-aOr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="NAT-Dk-ZMX" kind="relationship" relationship="rootViewController" id="xf6-cP-fsC"/>
@@ -928,10 +935,10 @@
         <scene sceneID="m9L-HG-6gN">
             <objects>
                 <tabBarController storyboardIdentifier="Startup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fKY-hV-Kh7" customClass="StartupController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="9Eg-Va-BnE">
+                    <tabBar key="tabBar" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="9Eg-Va-BnE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.0" green="1" blue="1" alpha="0.25430757705479451" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="hOf-gJ-xGl" kind="relationship" relationship="viewControllers" id="YYv-wg-HMh"/>
@@ -951,9 +958,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SnB-4q-qo5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Categories" image="categories" selectedImage="categories" id="yAV-qv-bTb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ela-WP-eVH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ela-WP-eVH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -968,7 +976,7 @@
         <scene sceneID="xWN-hA-PaU">
             <objects>
                 <collectionViewController title="Categories" id="AUq-Vn-I1A" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DEu-Vg-ZZH">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="DEu-Vg-ZZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
