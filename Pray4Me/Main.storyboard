@@ -16,7 +16,7 @@
             <objects>
                 <navigationController id="CZO-3S-BzK" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Calender" image="calender" selectedImage="calender" id="jeM-Bq-1FT"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="N6y-0E-NKh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="N6y-0E-NKh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -264,7 +264,7 @@
             <objects>
                 <navigationController id="R0a-Zn-fG2" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile" selectedImage="profile" id="f7Q-rE-wGV"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Cet-B8-VnN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Cet-B8-VnN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -651,7 +651,7 @@
             <objects>
                 <navigationController id="hOf-gJ-xGl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Prayer Feed" image="newsfeed" selectedImage="newsfeed" id="FYp-jk-9wK"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qOu-S4-CbF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qOu-S4-CbF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -897,7 +897,7 @@
             <objects>
                 <navigationController id="YmN-rh-dpv" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" selectedImage="settings" id="edc-hc-mHE"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="7Yi-zK-aOr">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Yi-zK-aOr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -952,13 +952,13 @@
             </objects>
             <point key="canvasLocation" x="-1070" y="-37"/>
         </scene>
-        <!--Categories-->
+        <!--Bible-->
         <scene sceneID="oTu-do-yV9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SnB-4q-qo5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Categories" image="categories" selectedImage="categories" id="yAV-qv-bTb"/>
+                    <tabBarItem key="tabBarItem" title="Bible" image="categories" selectedImage="categories" id="yAV-qv-bTb"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ela-WP-eVH">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ela-WP-eVH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -972,28 +972,41 @@
             </objects>
             <point key="canvasLocation" x="-1514.4000000000001" y="1130.2848575712144"/>
         </scene>
-        <!--Categories-->
+        <!--Bible-->
         <scene sceneID="xWN-hA-PaU">
             <objects>
-                <collectionViewController title="Categories" id="AUq-Vn-I1A" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="DEu-Vg-ZZH">
+                <collectionViewController title="Bible" id="AUq-Vn-I1A" customClass="BibleCollectionViewController" customModule="Pray4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="DEu-Vg-ZZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="omT-Tc-fQY">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="114" height="147"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="3" minY="10" maxX="3" maxY="10"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BibleChapterCategoryCellIdentifier" id="EaN-RC-8TW">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BibleChapterCategoryCellIdentifier" id="EaN-RC-8TW" customClass="BibleChapterCollectionViewCell" customModule="Pray4Me" customModuleProvider="target">
+                                <rect key="frame" x="3" y="10" width="114" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="114" height="147"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYY-6X-8WB" userLabel="Chapter Title">
+                                            <rect key="frame" x="36" y="63" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </view>
+                                <color key="backgroundColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="bibleChapterLabel" destination="QYY-6X-8WB" id="irA-L2-0ZP"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1001,11 +1014,11 @@
                             <outlet property="delegate" destination="AUq-Vn-I1A" id="SGi-Z6-C4t"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Categories" id="wBY-mS-ytp"/>
+                    <navigationItem key="navigationItem" title="Bible" id="wBY-mS-ytp"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9zr-ib-Lh4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-305" y="1130"/>
+            <point key="canvasLocation" x="-306.39999999999998" y="1129.385307346327"/>
         </scene>
     </scenes>
     <resources>

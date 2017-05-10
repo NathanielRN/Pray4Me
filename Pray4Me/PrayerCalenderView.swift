@@ -404,7 +404,7 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 		guard let dateBeingSelectedByUser = dateBeingSelectedByUser else { return }
 		
 		let currentMonthInfo: [Int] = monthInfo[(indexPath as NSIndexPath).section]!
-		
+
 		let fromStartOfMonthIndexPath = IndexPath(item: (indexPath as NSIndexPath).item - currentMonthInfo[firstDayIndex], section: (indexPath as NSIndexPath).section)
 		
 		var eventsArray: [CalendarEvent] = [CalendarEvent]()

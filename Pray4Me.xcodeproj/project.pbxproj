@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */; };
 		1602934C1E822F1B0039D3A9 /* EventsArrayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */; };
+		160E7C7E1EB2D92800FF0150 /* BibleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160E7C7D1EB2D92800FF0150 /* BibleCollectionViewController.swift */; };
+		160E7C801EB2D9A700FF0150 /* BibleChapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160E7C7F1EB2D9A700FF0150 /* BibleChapterCell.swift */; };
 		1634D8581E9091250021F6C1 /* Pray4MeLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */; };
 		1634D86E1E909D2B0021F6C1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D86D1E909D2B0021F6C1 /* FBSDKCoreKit.framework */; };
 		1634D8701E909D390021F6C1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */; };
@@ -21,7 +23,6 @@
 		165D1D241E62797E0083322E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 165D1D221E62797E0083322E /* LaunchScreen.storyboard */; };
 		165D1D2F1E62797E0083322E /* Pray4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D2E1E62797E0083322E /* Pray4MeTests.swift */; };
 		165D1D3A1E62797E0083322E /* Pray4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D391E62797E0083322E /* Pray4MeUITests.swift */; };
-		165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D471E627BF30083322E /* CategoriesViewController.swift */; };
 		165D1D4A1E627CE10083322E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165D1D491E627CE10083322E /* SettingsViewController.swift */; };
 		165F69AE1E935169000C128C /* Facebook User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165F69AD1E935169000C128C /* Facebook User.swift */; };
 		16AD3D181E6BB371001DE3B5 /* PrayerFeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */; };
@@ -67,6 +68,8 @@
 /* Begin PBXFileReference section */
 		160293081E7FF7630039D3A9 /* PrayerEventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerEventsTableViewController.swift; sourceTree = "<group>"; };
 		1602934B1E822F1B0039D3A9 /* EventsArrayModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsArrayModel.swift; sourceTree = "<group>"; };
+		160E7C7D1EB2D92800FF0150 /* BibleCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleCollectionViewController.swift; sourceTree = "<group>"; };
+		160E7C7F1EB2D9A700FF0150 /* BibleChapterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BibleChapterCell.swift; sourceTree = "<group>"; };
 		1634D8571E9091250021F6C1 /* Pray4MeLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pray4MeLoginViewController.swift; sourceTree = "<group>"; };
 		1634D86D1E909D2B0021F6C1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		1634D86F1E909D390021F6C1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -86,7 +89,6 @@
 		165D1D351E62797E0083322E /* Pray4MeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Pray4MeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		165D1D391E62797E0083322E /* Pray4MeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pray4MeUITests.swift; sourceTree = "<group>"; };
 		165D1D3B1E62797E0083322E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		165D1D471E627BF30083322E /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		165D1D491E627CE10083322E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		165F69AD1E935169000C128C /* Facebook User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Facebook User.swift"; sourceTree = "<group>"; };
 		16AD3D171E6BB371001DE3B5 /* PrayerFeedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrayerFeedTableViewController.swift; sourceTree = "<group>"; };
@@ -170,12 +172,13 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
-		1634D8541E908FF80021F6C1 /* Categories */ = {
+		1634D8541E908FF80021F6C1 /* Bible */ = {
 			isa = PBXGroup;
 			children = (
-				165D1D471E627BF30083322E /* CategoriesViewController.swift */,
+				160E7C7D1EB2D92800FF0150 /* BibleCollectionViewController.swift */,
+				160E7C7F1EB2D9A700FF0150 /* BibleChapterCell.swift */,
 			);
-			name = Categories;
+			name = Bible;
 			sourceTree = "<group>";
 		};
 		1634D8551E9090010021F6C1 /* Profile */ = {
@@ -263,7 +266,7 @@
 				1634D8821E91F02C0021F6C1 /* Tab Bar Startup */,
 				1634D8561E9091010021F6C1 /* Login Page */,
 				1634D8551E9090010021F6C1 /* Profile */,
-				1634D8541E908FF80021F6C1 /* Categories */,
+				1634D8541E908FF80021F6C1 /* Bible */,
 				16FE884D1E7DAE6700281EBF /* Prayer Calendar */,
 				1634D8531E908FF20021F6C1 /* Settings */,
 				16BB056E1E6D16DA00429A12 /* Prayer Feed */,
@@ -498,7 +501,6 @@
 				16FE885E1E7E5E4D00281EBF /* CalendarViewController.swift in Sources */,
 				1658D3FE1EA1C9C00017E7FA /* FeedFilterTableViewController.swift in Sources */,
 				165D1D181E62797E0083322E /* AppDelegate.swift in Sources */,
-				165D1D481E627BF30083322E /* CategoriesViewController.swift in Sources */,
 				16AD3D181E6BB371001DE3B5 /* PrayerFeedTableViewController.swift in Sources */,
 				165D1D4A1E627CE10083322E /* SettingsViewController.swift in Sources */,
 				16FE88551E7DE2FB00281EBF /* CalendarEvent.swift in Sources */,
@@ -510,6 +512,8 @@
 				16FE885A1E7E4BD100281EBF /* CalendarDayCell.swift in Sources */,
 				1634D8801E91E57B0021F6C1 /* SettingsTableViewController.swift in Sources */,
 				160293091E7FF7630039D3A9 /* PrayerEventsTableViewController.swift in Sources */,
+				160E7C801EB2D9A700FF0150 /* BibleChapterCell.swift in Sources */,
+				160E7C7E1EB2D92800FF0150 /* BibleCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

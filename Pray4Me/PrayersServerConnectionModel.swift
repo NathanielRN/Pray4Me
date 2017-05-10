@@ -8,7 +8,7 @@
 
 import Foundation
 
-let pBaseURL = "http://ingrids-macbook-pro.local:5000/" //"https://pray-4-me.herokuapp.com/"
+let pBaseURL = "https://pray-4-me.herokuapp.com/" //"http://nathans-macbook-pro.local:5000/"
 let pPrayerRequests = "prayerRequests/"
 let pFiles = "files"
 
