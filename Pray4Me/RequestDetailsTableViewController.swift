@@ -9,9 +9,8 @@
 import UIKit
 
 protocol RequestDetailsDelegate: class {
-	
 	func requestDetailsDidCancel (_ controller: RequestDetailsTableViewController)
-	func requestDetailsDidSubmit (_ controller: RequestDetailsTableViewController, prayerToAdd prayer: PrayerRequest)
+	func requestDetailsDidSubmit (_ controller: RequestDetailsTableViewController, thePrayer: PrayerRequest)
 }
 
 class RequestDetailsTableViewController: UITableViewController, FeelingPickerTableViewControllerDelegate {
@@ -30,8 +29,7 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
 		prayer.userAvatar = FacebookUser.sharedInstanceOfMe.userProfilePicture
 		prayer.userFeeling = feeling
 		prayer.userID = FacebookUser.sharedInstanceOfMe.userID
-		//self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, prayerToAdd: prayer)
-		self.keepPrayerForLater(thePrayer: prayer)
+		self.delegateForSaveAndCancel?.requestDetailsDidSubmit(self, thePrayer: prayer)
 	}
 
 	@IBOutlet var prayerTextView: UITextView!
@@ -79,16 +77,9 @@ class RequestDetailsTableViewController: UITableViewController, FeelingPickerTab
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		
 		if segue.identifier == "PickFeeling" {
 			let feelingPickerViewController = segue.destination as! PrayerFeelingPickerController
 			feelingPickerViewController.delegateToHandleFeelingChoice = self
 		}
     }
-
-	// MARK: Give for server handling
-
-	func keepPrayerForLater(thePrayer: PrayerRequest) {
-		AppDelegate.appDelegate().prayerRequests.savePrayerToServer(prayerToBeSent: thePrayer)
-	}
 }

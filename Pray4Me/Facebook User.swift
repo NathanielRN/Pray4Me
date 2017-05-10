@@ -14,11 +14,11 @@ struct FacebookUserInfo {
 	var userName: String?
 	var userProfilePicture: UIImage?
 	var userEmail: String?
-	var userFriendsArray: [FacebookUser]?
+	var userFriendsIDArray: [String]?
 	var userID: String?
 }
 
 class FacebookUser {
 
-	static var sharedInstanceOfMe: FacebookUserInfo = FacebookUserInfo(userName: nil, userProfilePicture: nil, userEmail: nil, userFriendsArray: nil, userID: nil)
+	static var sharedInstanceOfMe: FacebookUserInfo = FacebookUserInfo(userName: nil, userProfilePicture: nil, userEmail: nil, userFriendsIDArray: nil, userID: nil)
 }

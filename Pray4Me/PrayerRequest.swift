@@ -20,6 +20,7 @@ class PrayerRequest: NSObject {
 		//self.userAvatar = dictionaryWithInfo["userAvatar"] as? UIImage
 		self.userFeeling = dictionaryWithInfo["userFeeling"] as? String
 		self.userID = dictionaryWithInfo["userID"] as? String
+		self.prayerServerID = dictionaryWithInfo["_id"] as? String
 	}
 
 	var userName: String?
@@ -32,6 +33,8 @@ class PrayerRequest: NSObject {
 
 	var userID: String?
 
+	var prayerServerID: String?
+
 	func convertToDictionary() -> [AnyHashable: Any] {
 		var prayerAsDictionary = [String:Any]()
 		prayerAsDictionary["userName"] = self.userName
@@ -39,6 +42,7 @@ class PrayerRequest: NSObject {
 		//prayerAsDictionary["userAvatar"] = self.userAvatar
 		prayerAsDictionary["userFeeling"] = self.userFeeling
 		prayerAsDictionary["userID"] = self.userID
+		prayerAsDictionary["_id"] = self.prayerServerID
 		return prayerAsDictionary
 	}
 
