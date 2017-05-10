@@ -169,13 +169,13 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0HB-KX-fOc" userLabel="Name &amp; Feeling">
                                             <rect key="frame" x="65" y="0.0" width="204" height="20.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRE-ll-GbE">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="1000" text="User Name" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRE-ll-GbE">
                                                     <rect key="frame" x="0.0" y="0.0" width="86" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Feelings Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wQy-0E-toR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Feelings Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="wQy-0E-toR">
                                                     <rect key="frame" x="94" y="0.0" width="110" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -189,7 +189,7 @@
                                             </constraints>
                                         </stackView>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prayer Request" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYy-zP-uLU">
-                                            <rect key="frame" x="65" y="20.5" width="86" height="14.5"/>
+                                            <rect key="frame" x="65" y="20.5" width="302" height="14.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -234,7 +234,9 @@
                                         <constraint firstItem="osR-CU-sGk" firstAttribute="leading" secondItem="y03-jd-Kun" secondAttribute="leadingMargin" id="RHo-1I-7n4"/>
                                         <constraint firstItem="kYy-zP-uLU" firstAttribute="leading" secondItem="osR-CU-sGk" secondAttribute="trailing" constant="18" id="Tgv-nx-8Lj"/>
                                         <constraint firstItem="0HB-KX-fOc" firstAttribute="top" secondItem="y03-jd-Kun" secondAttribute="topMargin" constant="-8" id="YdM-ed-lsw"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="kYy-zP-uLU" secondAttribute="trailing" id="c2e-hm-fIt"/>
                                         <constraint firstItem="kYy-zP-uLU" firstAttribute="top" secondItem="0HB-KX-fOc" secondAttribute="bottom" constant="0.5" id="dge-m8-U0D"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="0HB-KX-fOc" secondAttribute="trailing" id="eaN-hd-m0v"/>
                                         <constraint firstItem="5ic-ex-tIb" firstAttribute="leading" secondItem="kYy-zP-uLU" secondAttribute="leading" id="iW3-EU-B2T"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="5ic-ex-tIb" secondAttribute="bottom" constant="-2.5" id="lXq-Wj-Kf4"/>
                                         <constraint firstItem="5ic-ex-tIb" firstAttribute="top" secondItem="kYy-zP-uLU" secondAttribute="bottom" constant="2" id="rCf-HL-wv6"/>
