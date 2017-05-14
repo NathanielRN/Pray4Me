@@ -663,6 +663,7 @@
 					/Users/NathanielRuiz/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Pray4Me/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nathaniel.Pray4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -681,6 +682,7 @@
 					/Users/NathanielRuiz/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Pray4Me/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Nathaniel.Pray4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
