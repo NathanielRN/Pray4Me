@@ -191,7 +191,6 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 			return 0
 		}
 	
-	
 		self.startDateCache = startDate as NSDate
 		self.endDateCache = endDate as NSDate
 		
@@ -208,7 +207,7 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 		
 		self.startOfMonthCache = dateFromDayOneComponents as NSDate
 		
-		let today = Date() // Where are you having your value be set? How can I compare against you if I haven't given you a date!!
+		let today = Date() // Defaults to the current time
 		
 		if startOfMonthCache.compare(today) == ComparisonResult.orderedAscending && endDateCache.compare(today) == ComparisonResult.orderedAscending {
 			
@@ -244,7 +243,6 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 		monthInfo[section] = [firstWeekdayOfMonthIndex, numberOfDaysInMonth]
 		
 		return numberOfDaysInWeek * maximumNumberOfRows // 7 x 6 = 42
-		
 		
 	}
 	
@@ -405,7 +403,7 @@ class PrayerCalendarView: UIView, UICollectionViewDataSource, UICollectionViewDe
 		
 		let currentMonthInfo: [Int] = monthInfo[(indexPath as NSIndexPath).section]!
 
-		let fromStartOfMonthIndexPath = IndexPath(item: (indexPath as NSIndexPath).item - currentMonthInfo[firstDayIndex], section: (indexPath as NSIndexPath).section)
+		let fromStartOfMonthIndexPath = IndexPath(item: (indexPath as NSIndexPath).item - currentMonthInfo[firstDayIndex] + 1, section: (indexPath as NSIndexPath).section - 4) // Note: I should not have to do -4 here, this is a mistake which I need to investigate but this fixes the problem for now. + 1 shouldn't be there either.
 		
 		var eventsArray: [CalendarEvent] = [CalendarEvent]()
 		

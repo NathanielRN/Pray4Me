@@ -656,18 +656,20 @@
 		165D1D3F1E62797E0083322E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7556V46NNX;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					/Users/NathanielRuiz/Documents/FacebookSDK,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT)/SDKs/FacebookSDK";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Pray4Me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Nathaniel.Pray4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Pray4Me/Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/NathanielRuiz/Pray4MeRepo/Pray4Me/Pray4Me/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -675,18 +677,20 @@
 		165D1D401E62797E0083322E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7556V46NNX;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)",
-					/Users/NathanielRuiz/Documents/FacebookSDK,
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT)/SDKs/FacebookSDK";
+				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = Pray4Me/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = Nathaniel.Pray4Me;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Pray4Me/Bridging-Header.h";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/NathanielRuiz/Pray4MeRepo/Pray4Me/Pray4Me/Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
